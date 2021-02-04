@@ -6,15 +6,15 @@
 	<?php require "../design/staff-navbar.php"?>
 	<body style="background-color: rgba(0,0,0,0.1);">
 		<div class="row bg-light">
-			<?php require "../design/navtab-manageclass.php"?>
-			<div class="col-md-9">
+			<?php require "../design/navtab-managestudent.php"?>
+			<div class="col-md-9 card body">
 				<div class="row">
 					<form action="" class="col-md-6 mr-auto">
 						<div class="input-group mb-3">
 							<div class="input-group-prepend">
 								<button class="btn btn-light dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">All</button>
 								<div class="dropdown-menu">
-								  <?php
+								<?php
 									echo '<a class="dropdown-item disabled">Intake</a>';
 									echo '<div role="separator" class="dropdown-divider"></div>';
 									for ($i = 0; $i < 10; $i++){
@@ -31,15 +31,15 @@
 							</div>
 						</div>
 					</form>
-					<a class="btn btn-lg btn-light ml-auto" href="#" style="border: solid 1px;">+</a>
+					<a class="btn btn-lg btn-light ml-auto mr-5" href="Student-Create.php" style="border: solid 1px;">+</a>
 				</div>
 				<br><br>
 				<table class="table">
 					<thead>
 						<tr>
 							<th>No.</th>
-							<th>Class Code</th>
-							<th>Module</th>
+							<th>Student Name</th>
+							<th>Student ID</th>
 							<th>Intake</th>
 							<th>Action</th>
 						</tr>
@@ -53,9 +53,9 @@
 									<td>Kent</td>
 									<td>UCDF1905ICT(SE)</td>
 									<td>
-										<a class="btn btn-sm btn-success" href="#">View</a>
-										<a class="btn btn-sm btn-success" href="#">Edit</a>
-										<a class="btn btn-sm btn-success" href="#">Delete</a>
+										<a class="btn btn-sm btn-success" style="margin: 5px;" href="Student-View.php">View</a>
+										<a class="btn btn-sm btn-success" style="margin: 5px;" href="Student-Edit.php">Edit</a>
+										<a class="btn btn-sm btn-success" style="margin: 5px;" href="#">Delete</a>
 									</td>
 								</tr>';
 						}
