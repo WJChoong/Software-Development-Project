@@ -1,6 +1,15 @@
 <!doctype html>
 <html>
 	<head>
+		<script src="../jquery-3.5.1.min.js" type="text/javascript"></script>
+		<script>
+			$(document).ready(function() {
+
+				$("#btn-delete").click(function() {
+					$("#delete-modal").modal();
+				});
+			});
+		</script>
 	</head>
 	
 	<?php require "../design/staff-navbar.php"?>
@@ -31,7 +40,7 @@
 							</div>
 						</div>
 					</form>
-					<a class="btn btn-lg btn-light ml-auto mr-5" href="Student-Create.php" style="border: solid 1px;">+</a>
+					<a class="btn btn-lg btn-light ml-auto mr-5" href="Create-Student.php" style="border: solid 1px;">+</a>
 				</div>
 				<br><br>
 				<table class="table">
@@ -53,15 +62,35 @@
 									<td>Kent</td>
 									<td>UCDF1905ICT(SE)</td>
 									<td>
-										<a class="btn btn-sm btn-success" style="margin: 5px;" href="Student-View.php">View</a>
-										<a class="btn btn-sm btn-success" style="margin: 5px;" href="Student-Edit.php">Edit</a>
-										<a class="btn btn-sm btn-success" style="margin: 5px;" href="#">Delete</a>
+										<a class="btn btn-sm btn-success" style="margin: 5px;" href="View-Student.php">View</a>
+										<a class="btn btn-sm btn-success" style="margin: 5px;" href="Edit-Student.php">Edit</a>
+										<span class="btn btn-sm btn-success" id="btn-delete" style="margin: 5px;" data-toggle="modal" data-target="#exampleModalCenter">Delete</span>
+									</div>
 									</td>
 								</tr>';
 						}
 						?>          
 					</tbody>
 				</table>
+			</div>
+		</div>
+		<div class="modal fade" id="delete-modal" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title">Warning</h5>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					 </div>
+					<div class="modal-body">
+						Are you sure you want to delete the student?
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+						<button type="button" class="btn btn-primary">Confirm</button>
+					</div>
+				</div>
 			</div>
 		</div>
 	</body>

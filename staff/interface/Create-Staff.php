@@ -1,14 +1,13 @@
 <!doctype html>
 <html>
 	<head>
-		<meta charset="utf-8">
 		<title>Untitled Document</title>
 	</head>
 
 		<?php require "../design/staff-navbar.php"?>
 	<body style="background-color: rgba(0,0,0,0.1);">
 		<div class="row bg-light">
-			<?php require "../design/navtab-managestudent.php"?>
+			<?php require "../design/navtab-addstaff.php"?>
 			<div class="col-md-9">
 				<div class="container bg-light card body">
 					<h3 class="row justify-content-center font-weight-bold">Create Information</h3>
@@ -82,6 +81,13 @@
 								<input placeholder="Confirm Password" class="form-control here" type="text">
 							</div>
 					    </div> 
+						<div class="form-group row">
+							<label class="col-3 col-form-label">Upload Your Photo</label> 
+							<div class="col-8">
+								<input type="file" class="custom-file-input" id="customFile">
+								<label class="custom-file-label ml-3">Choose file</label>
+							</div>
+					    </div> 
 					    <div class="form-group row">
 							<div class="offset-4 col-8">
 								<button name="submit" type="submit" class="btn btn-primary">Create Profile</button>
@@ -91,5 +97,12 @@
 				</div>
 			</div>
 		</div>
+		<script>
+			// Add the following code if you want the name of the file appear on select
+			$(".custom-file-input").on("change", function() {
+			  var fileName = $(this).val().split("\\").pop();
+			  $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
+			});
+		</script>
 	</body>
 </html>
