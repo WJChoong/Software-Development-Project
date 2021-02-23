@@ -1,5 +1,4 @@
 <?php
-
 $host = "localhost";
 $user = "root";
 $pass = "";
@@ -10,5 +9,4 @@ $link = mysqli_connect($host, $user, $pass, $db);
 if (!$link) {
 	die("Connection failed: ".mysqli_connect_error());
 }
-
 ?>

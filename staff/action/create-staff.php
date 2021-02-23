@@ -22,7 +22,10 @@ if (isset($_POST["submit"])){
     //check whether passowrd are same
     if ($pass === $pass2){
         //get the last staff id
-        $sql1 = "SELECT staff_id FROM staff ORDER BY staff_id DESC LIMIT 1;";
+        $sql1 = "SELECT staff_id 
+                 FROM staff 
+                 ORDER BY staff_id 
+                 DESC LIMIT 1;";
 		$results = mysqli_query($link,$sql1); //return whether there is a result
 
 		if(mysqli_num_rows($results)>0){ 

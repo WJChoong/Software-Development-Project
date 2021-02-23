@@ -13,14 +13,14 @@
 					<img src="../img/Logo-APU.png" class="img-fluid img-thumbnail rounded mx-auto d-block" alt="">
 				</picture>
 				<br>
-				<h5 class="row justify-content-center font-weight-bold">Name</h5>
+				<h5 class="row justify-content-center font-weight-bold">Staff ID</h5>
 				<h5 class="row justify-content-center">
 					<?php 
 
 					?>
 				</h5>
 				<br>
-				<h5 class="row justify-content-center font-weight-bold">Staff ID</h5>					
+				<h5 class="row justify-content-center font-weight-bold">Name</h5>					
 				<h5 class="row justify-content-center">
 					<?php 
 
@@ -41,14 +41,21 @@
 					?>
 				</h5>
 				<br>
-				<h5 class="row justify-content-center font-weight-bold">Address</h5>
+				<h5 class="row justify-content-center font-weight-bold">Email</h5>
 				<h5 class="row justify-content-center">
 					<?php 
 
 					?>
 				</h5>
 				<br>
-				<h5 class="row justify-content-center font-weight-bold">Position</h5>
+				<h5 class="row justify-content-center font-weight-bold">Street</h5>
+				<h5 class="row justify-content-center">
+					<?php 
+
+					?>
+				</h5>
+				<br>
+				<h5 class="row justify-content-center font-weight-bold">Country</h5>
 				<h5 class="row justify-content-center">
 					<?php 
 

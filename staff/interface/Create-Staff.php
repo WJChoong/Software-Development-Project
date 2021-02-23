@@ -17,7 +17,7 @@
 						<div class="form-group row">
 							<label class="col-3 col-form-label">Name</label> 
 							<div class="col-8">
-							  <input placeholder="Name" class="form-control here" name="name" type="text" required="required">
+							  <input placeholder="Name" class="form-control here" name="name" type="text">
 							</div>
 						</div>
 						<div class="form-group row">
