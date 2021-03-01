@@ -36,7 +36,7 @@
 
 	<body style="background-image: url('image/background.jpg'); background-size: cover; background-repeat: no-repeat; height: 100%">
 	<div class = "d-flex justify-content-center h-100">
-		<div class="card" style="height: auto; margin-top: auto; margin-bottom: auto; width: auto; background-color: rgba(0,0,0,0.5)">
+		<div class="card" style="height: auto; margin: auto; width: auto; background-color: rgba(0,0,0,0.6)">
 			<center><div class="card-header">
 			<ul class="nav navbar-nav">
 			<li class="nav-item">

@@ -4,7 +4,14 @@
 		<meta charset="utf-8">
 		<title>Untitled Document</title>
 	</head>
-
+	<?php
+	session_start();
+		if(!isset($_SESSION['lect_id'])){
+		echo ("<script>alert('Oops! Please Log In First!')</script>");
+		die("<script>;window.history.go(-1);</script>");
+		}
+		else $id = $_SESSION['lect_id'];
+	?>
 	<?php require "../design/lec-navbar.php"?>
 	<body style="background-color: rgba(0,0,0,0.1);">
 		<div class="row bg-light">
@@ -19,15 +26,15 @@
 					<h5 class="row justify-content-center">
 						<?php 
 						//Step 1 - Establishing connection
-						 include('../external/conn.php');
+						 include('../External/conn.php');
 						//Step 2 - Execute SQL query
-						$sql = 'SELECT lect_name FROM lecturer WHERE lect_id = "PKF"';
+						$sql = 'SELECT lect_name FROM lecturer WHERE lect_id = $id';
 						$result = mysqli_query($conn, $sql);
 						//Step 3 - Process result
 						if(mysqli_affected_rows($conn)==1){
 						for ($i = 0; $i < mysqli_num_rows($result); $i++){
 						$row  = mysqli_fetch_assoc($result);
-						echo '<h5 class="row justify-content-center">'.$row['lect_name'].'</h5>';
+						echo '<h5 class="row justify-content-center">'.$row['lect_id'].'</h5>';
 						}
 						}
 						?>
@@ -37,9 +44,9 @@
 					<h5 class="row justify-content-center">
 						<?php 
 						//Step 1 - Establishing connection
-						 include('../external/conn.php');
+						 include('../External/conn.php');
 						//Step 2 - Execute SQL query
-						$sql = 'SELECT lect_id FROM lecturer WHERE lect_id = "PKF"';
+						$sql = 'SELECT lect_id FROM lecturer WHERE lect_id = $_SESSION["lect_id"]';
 						$result = mysqli_query($conn, $sql);
 						//Step 3 - Process result
 						if(mysqli_affected_rows($conn)==1){
@@ -55,9 +62,9 @@
 					<h5 class="row justify-content-center">
 						<?php 
 						//Step 1 - Establishing connection
-						 include('../external/conn.php');
+						 include('../External/conn.php');
 						//Step 2 - Execute SQL query
-						$sql = 'SELECT lect_DOB FROM lecturer WHERE lect_id = "PKF"';
+						$sql = 'SELECT lect_DOB FROM lecturer WHERE lect_id = $_SESSION["lect_id"]';
 						$result = mysqli_query($conn, $sql);
 						//Step 3 - Process result
 						if(mysqli_affected_rows($conn)==1){
@@ -73,9 +80,9 @@
 					<h5 class="row justify-content-center">
 						<?php 
 						//Step 1 - Establishing connection
-						 include('../external/conn.php');
+						 include('../External/conn.php');
 						//Step 2 - Execute SQL query
-						$sql = 'SELECT lect_num FROM lecturer WHERE lect_id = "PKF"';
+						$sql = 'SELECT lect_num FROM lecturer WHERE lect_id = $_SESSION["lect_id"]';
 						$result = mysqli_query($conn, $sql);
 						//Step 3 - Process result
 						if(mysqli_affected_rows($conn)==1){
@@ -91,9 +98,9 @@
 					<h5 class="row justify-content-center">
 						<?php 
 						//Step 1 - Establishing connection
-						 include('../external/conn.php');
+						 include('../External/conn.php');
 						//Step 2 - Execute SQL query
-						$sql = 'SELECT * FROM lecturer WHERE lect_id = "PKF"';
+						$sql = 'SELECT * FROM lecturer WHERE lect_id = $_SESSION["lect_id"]';
 						$result = mysqli_query($conn, $sql);
 						//Step 3 - Process result
 						if(mysqli_affected_rows($conn)==1){
@@ -109,9 +116,9 @@
 					<h5 class="row justify-content-center">
 						<?php 
 						//Step 1 - Establishing connection
-						 include('../external/conn.php');
+						 include('../External/conn.php');
 						//Step 2 - Execute SQL query
-						$sql = 'SELECT * FROM lecturer WHERE lect_id = "PKF"';
+						$sql = 'SELECT * FROM lecturer WHERE lect_id = $_SESSION["lect_id"]';
 						$result = mysqli_query($conn, $sql);
 						//Step 3 - Process result
 						if(mysqli_affected_rows($conn)==1){

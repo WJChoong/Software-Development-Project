@@ -31,7 +31,7 @@
 
 	<body style="background-image: url('image/background.jpg'); background-size: cover; background-repeat: no-repeat; height: 100%">
 	<div class = "d-flex justify-content-center h-100">
-		<div class="card" style="height: auto; margin-top: auto; margin-bottom: auto; width: auto; background-color: rgba(0,0,0,0.5)">
+		<div class="card" style="height: auto; margin: auto; width: auto; background-color: rgba(0,0,0,0.5)">
 			<div class="card-header">
 			<ul class="nav navbar-nav">
 			<li class="nav-item">
@@ -65,7 +65,7 @@
 				</tr>
 				</table><hr>
 				<center><div id="student" class="tabcontent">
-				<form method="post" action="PHP/login.php">
+				<form method="post" action="student interface/login-stud.php">
 				<i><p style="font-size: 24px; color:white"> Student Sign In </p></i>
 				<div class="form-group row justify-content-center">
 				<img src ="image/email_16.png" alt="Email" width="40px" height="40px" class="mb-1"></img>

@@ -37,11 +37,11 @@ $classtype = $_POST['class_type'];
 //step 2: do connection to the database
 include "../External/conn.php"; //link the conn.php info to here
 //step 3: select and compare user from database whether user exist or not(since this is select)
-$sql = "SELECT *
+$sql = "SELECT S.student_id, S.student_name, C.course_name
 		FROM student S JOIN course C JOIN module M
 		WHERE M.module_id = $moduleid
-		AND S.course_id = C.course_id 
-		AND C.module_id = M.module_id";
+		AND M.module_id = C.module_id
+		AND C.course_id = S.course_id";
 $result = mysqli_query($conn, $sql);
 		//Step 3 - Process result
 		if(mysqli_affected_rows($conn)>0){

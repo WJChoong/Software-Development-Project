@@ -20,19 +20,19 @@
 						<div class="form-group row">
 							<label class="col-3 col-form-label">Module ID</label> 
 							<div class="col-8">
-							<select class="custom-select" name="module_id">
+							<select class="custom-select">
 							<option value="#">--Module ID--</option>
 						<?php 			             
 					    //Step 1 - Establishing connection
 						 include('../external/conn.php');
 						//Step 3 - Execute SQL query
-						$sql = "SELECT module_id FROM module";
+						$sql = "SELECT module_id , module_name FROM module GROUP BY module_id";
 						$result = mysqli_query($conn, $sql);
 						//Step 4 - Process result
 						if(mysqli_affected_rows($conn)>0){
 						for ($i = 0; $i < mysqli_num_rows($result); $i++){
 						$row  = mysqli_fetch_assoc($result);
-						echo '<option value="#">'.$row['module_id'].'</option>';
+						echo '<option value="moduleid">'.$row['module_name'].'</option>';
 						}
 						}
 						?>
@@ -54,7 +54,7 @@
 					    <div class="form-group row">
 					    <label class="col-3 col-form-label">Duration</label> 
 						<div class="col-8">
-							<select class="custom-select" name="duration">
+							<select class="custom-select">
 									<option value="#">--Duration--</option>
 									<option value="1h">1 hour</option>
 									<option value="1h30m">1 hour 30 minutes</option>
@@ -85,5 +85,5 @@
 							<div class="offset-4 col-8">
 								<button name="submit" type="submit" class="btn btn-primary">Proceed >>></button>
 							</div>
-					    </div>
+					    </div></form>
 							</div>

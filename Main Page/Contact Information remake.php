@@ -65,7 +65,7 @@
 			<center><h1 style="color: white"> Contact Information </h1></center>
 			<hr>
 			<div class="row">
-			<div class="col-md-4">
+			<div class="col-md-4" style="text-align:center">
 			<h3 id="header">University Location</h3>
 			<iframe src="https://maps.google.com/maps?q=APU&t=&z=15&ie=UTF8&iwloc=&output=embed" frameborder="0" style="border:0;margin-left: 150px;" allowfullscreen></iframe></div>
 		

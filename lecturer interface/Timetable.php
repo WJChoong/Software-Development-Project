@@ -21,19 +21,21 @@
 								<button class="btn btn-light dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">All</button>
 								<div class="dropdown-menu">
 								<?php
-									echo '<a class="dropdown-item disabled"><center>Week</center></a>';
+									echo '<a class="dropdown-item disabled"><center>Day</center></a>';
 									echo '<div role="separator" class="dropdown-divider"></div>';
 									$today = strtotime('today 00:00:00');
-									$this_week_start = strtotime('-1 week monday 00:00:00');
-									$this_week_end = strtotime('sunday 23:59:59');
-									$next_week_start = strtotime('monday 00:00:00');
-									$next_week_end = strtotime('+1 week sunday 23:59:59');
-									$last_week_start = strtotime('-2 week monday 00:00:00');
-									$last_week_end = strtotime('-1 week sunday 23:59:59');
-									echo date('M j', $today) . ' - Today<br /><br />';
-									echo date('M j', $next_week_start) . ' - ' . date('M j', $next_week_end) . ' - Next Week<br /><br />';
-									echo date('M j', $this_week_start) . ' - ' . date('M j', $this_week_end) . ' - This Week<br /><br />';
-									echo date('M j', $last_week_start) . ' - ' . date('M j', $last_week_end) . ' - Last Week<br />';
+									$monday = strtotime('monday this week');
+									$tuesday = strtotime('tuesday this week');
+									$wednesday = strtotime('wednesday this week');
+									$thursday = strtotime('thursday this week');
+									$friday = strtotime('friday this week');
+									echo '<a href="Timetable.php" class="dropdown-item">'.date('M j', $today) . ' - Today</a>';
+									echo '<div role="separator" class="dropdown-divider"></div>';
+									echo '<a href="Timetable.php" class="dropdown-item">'.date('M j', $monday) . ' - Monday</a>';
+									echo '<a href="Timetable.php" class="dropdown-item">'.date('M j', $tuesday) . ' - Tuesday</a>';
+									echo '<a href="Timetable.php" class="dropdown-item">'.date('M j', $wednesday) . ' - Wednesday</a>';
+									echo '<a href="Timetable.php" class="dropdown-item">'.date('M j', $thursday) . ' - Thursday</a>';
+									echo '<a href="Timetable.php" class="dropdown-item">'.date('M j', $friday) . ' - Friday</a>';
 								?>
 								  
 								</div>
@@ -64,10 +66,10 @@
 						//Step 2 - Execute SQL query
 						$date1 = date('Y-m-d 00:00:00', strtotime('monday this week'));
 						$date2 = date('Y-m-d 23:59:59', strtotime('sunday this week'));
-						$sql = "SELECT *, D.module_name
-								FROM timetable C JOIN module D 
-								WHERE C.module_id = D.module_id 
-								AND C.time_time > '$date1' and C.time_time < '$date2'";
+						$sql = "SELECT *, M.module_name
+								FROM timetable T JOIN module M
+								WHERE T.module_id = M.module_id 
+								AND T.time_date > '$date1' and T.time_time < '$date2'";
 						$result = mysqli_query($conn, $sql);
 						//Step 3 - Process result
 						if(mysqli_affected_rows($conn)>0){
