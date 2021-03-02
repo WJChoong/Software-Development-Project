@@ -64,12 +64,12 @@
 			             //Step 1 - Establishing connection
 						 include('../external/conn.php');
 						//Step 2 - Execute SQL query
-						$date1 = date('Y-m-d 00:00:00', strtotime('monday this week'));
+						$date1 = date('Y-m-d 00:00:00', strtotime('today'));
 						$date2 = date('Y-m-d 23:59:59', strtotime('sunday this week'));
 						$sql = "SELECT *, M.module_name
 								FROM timetable T JOIN module M
 								WHERE T.module_id = M.module_id 
-								AND T.time_date > '$date1' and T.time_time < '$date2'";
+								AND T.time_date = '$date1'";
 						$result = mysqli_query($conn, $sql);
 						//Step 3 - Process result
 						if(mysqli_affected_rows($conn)>0){
