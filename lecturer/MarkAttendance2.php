@@ -11,7 +11,7 @@
 	<?php require "design/lec-navbar.php"?>
 	<body style="background-color: rgba(0,0,0,0.1);">
 		<div class="row bg-light">
-			<?php require "../design/lecnavtab-profile.php"?>
+			<?php require "design/lecnavtab-profile.php"?>
 				<div class="col-md-9">
 				<div class="container bg-light card body">
 					<h3 class="row justify-content-center font-weight-bold">Mark Attendance</h3>
