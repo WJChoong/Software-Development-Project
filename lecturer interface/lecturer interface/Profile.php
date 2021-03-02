@@ -1,9 +1,4 @@
 <!doctype html>
-<html>
-	<head>
-		<meta charset="utf-8">
-		<title>Untitled Document</title>
-	</head>
 	<?php
 	session_start();
 		if(!isset($_SESSION['lect_id'])){
@@ -11,6 +6,11 @@
 		die("<script>;window.history.go(-1);</script>");
 		}
 	?>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Untitled Document</title>
+	</head>
 	<?php require "../design/lec-navbar.php"?>
 	<body style="background-color: rgba(0,0,0,0.1);">
 		<div class="row bg-light">
