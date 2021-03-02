@@ -8,7 +8,7 @@
 		die(header("location: ../login.php"));
 	}
 	?>
-	<?php require "../design/lec-navbar.php"?>
+	<?php require "design/lec-navbar.php"?>
 	<body style="background-color: rgba(0,0,0,0.1);">
 		<div class="row bg-light">
 			<?php require "../design/lecnavtab-profile.php"?>
@@ -24,7 +24,7 @@
 							<option value="#">--Module ID--</option>
 						<?php 			             
 					    //Step 1 - Establishing connection
-						 include('../external/conn.php');
+						 include('action/conn.php');
 						//Step 3 - Execute SQL query
 						$sql = "SELECT module_id , module_name FROM module GROUP BY module_id";
 						$result = mysqli_query($conn, $sql);

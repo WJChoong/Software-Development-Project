@@ -1,5 +1,5 @@
 <!doctype html>
-	<?php
+<?php
 	session_start();
 		if(!isset($_SESSION['lect_id'])){
 		echo ("<script>alert('Oops! Please Log In First!')</script>");
@@ -11,10 +11,10 @@
 		<meta charset="utf-8">
 		<title>Untitled Document</title>
 	</head>
-	<?php require "../design/lec-navbar.php"?>
+	<?php require "design/lec-navbar.php"?>
 	<body style="background-color: rgba(0,0,0,0.1);">
 		<div class="row bg-light">
-			<?php require "../design/lecnavtab-profile.php"?>
+			<?php require "design/lecnavtab-profile.php"?>
 			<div class="col-md-9">
 				<div class="container vh-130 bg-light card body">
 				<h3 class="row justify-content-center font-weight-bold">Profile</h3>

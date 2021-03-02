@@ -3,10 +3,10 @@
 	<head>
 	</head>
 	
-	<?php require "../design/lec-navbar.php"?>
+	<?php require "design/lec-navbar.php"?>
 	<body style="background-color: rgba(0,0,0,0.1);">
 		<div class="row bg-light">
-			<?php require "../design/lecnavtab-attendancehistory.php"?>
+			<?php require "design/lecnavtab-attendancehistory.php"?>
 			<div class="col-md-9 card body">
 				<div class="row">
 					<form action="" class="col-md-6 mr-auto">
@@ -18,7 +18,7 @@
 									echo '<a class="dropdown-item disabled">Module</a>';
 									echo '<div role="separator" class="dropdown-divider"></div>';
 									 //Step 1 - Establishing connection
-									include('../external/conn.php');
+									include('action/conn.php');
 									//Step 2 - Execute SQL query
 									$sql = 'SELECT * FROM table';
 									$result = mysqli_query($conn, $sql);

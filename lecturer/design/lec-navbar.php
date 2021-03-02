@@ -7,7 +7,7 @@
 
 
 <nav class="navbar navbar-expand-md navbar-light bg-light border-bottom" style="padding: 0 30px;">
-	<img class="img-fluid" src="../image/Logo-APU.png" style="max-height:80px;">
+	<img class="img-fluid" src="../lecturer/image/Logo-APU.png" style="max-height:80px;">
 	<button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
 		<span class="navbar-toggler-icon"></span>
 	</button>
@@ -21,8 +21,8 @@
 			<li class="nav-item dropdown">
 				<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Setting</a>
 				<div class="dropdown-menu dropdown-menu-right">
-					<a href="../lecturer interface/Profile.php" class="dropdown-item">Profile</a>
-					<a href="../lecturer interface/ChangePassword.php" class="dropdown-item">Change Password</a>
+					<a href="../lecturer/Profile.php" class="dropdown-item">Profile</a>
+					<a href="../lecturer/ChangePassword.php" class="dropdown-item">Change Password</a>
 					<div class="dropdown-divider"></div>
 					<a href="#"class="dropdown-item">Logout</a>
 				</div>

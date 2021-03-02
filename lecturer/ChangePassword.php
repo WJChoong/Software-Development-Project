@@ -5,10 +5,10 @@ session_start();
 <html>
 	<head>
 	</head>
-    <?php require "../design/lec-navbar.php"?>
+    <?php require "design/lec-navbar.php"?>
 	<body style="background-color: rgba(0,0,0,0.1);">
 	<div class="row bg-light">
-	<?php require "../design/lecnavtab-profile.php"?>
+	<?php require "design/lecnavtab-profile.php"?>
 		<div class="container col-md-9 card body bg-light">
             <h3 class="row justify-content-center font-weight-bold">Change Password</h3>
 			<br>

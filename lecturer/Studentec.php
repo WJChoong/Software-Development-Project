@@ -3,10 +3,10 @@
 	<head>
 	</head>
 	
-	<?php require "../design/lec-navbar.php"?>
+	<?php require "design/lec-navbar.php"?>
 	<body style="background-color: rgba(0,0,0,0.1);">
 		<div class="row bg-light">
-			<?php require "../design/lecnavtab-studentec.php"?>
+			<?php require "design/lecnavtab-studentec.php"?>
 				<div class="col-md-9  card body">
 				<div class="row">
 					<form action="" class="col-md-6 mr-auto">
@@ -45,7 +45,7 @@
 					<tbody>
 						<?php
 			             //Step 1 - Establishing connection
-						 include('../external/conn.php');
+						 include('action/conn.php');
 						//Step 2 - Handling connection error
 						//Step 3 - Execute SQL query
 						$sql = 'SELECT * 

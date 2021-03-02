@@ -9,10 +9,10 @@
 		die("<script>;window.history.go(-1);</script>");
 	}
 	?>
-	<?php require "../design/lec-navbar.php"?>
+	<?php require "design/lec-navbar.php"?>
 	<body style="background-color: rgba(0,0,0,0.1);">
 		<div class="row bg-light">
-			<?php require "../design/lecnavtab-timetable.php"?>
+			<?php require "design/lecnavtab-timetable.php"?>
 			<div class="col-md-9  card body">
 				<div class="row">
 					<form action="" class="col-md-6 mr-auto">
@@ -62,7 +62,7 @@
 					<tbody>
 						<?php
 			             //Step 1 - Establishing connection
-						 include('../external/conn.php');
+						 include('action/conn.php');
 						//Step 2 - Execute SQL query
 						$date1 = date('Y-m-d 00:00:00', strtotime('today'));
 						$date2 = date('Y-m-d 23:59:59', strtotime('sunday this week'));

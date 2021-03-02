@@ -8,7 +8,7 @@
 		die(header("location: ../login.php"));
 	}
 	?>
-	<?php require "../design/lec-navbar.php"?>
+	<?php require "design/lec-navbar.php"?>
 	<body style="background-color: rgba(0,0,0,0.1);">
 		<div class="row bg-light">
 			<?php require "../design/lecnavtab-profile.php"?>

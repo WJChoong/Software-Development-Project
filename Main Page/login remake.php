@@ -85,7 +85,7 @@
 						
 		
 				<center><div id="lecturer" class="tabcontent" style="display : none">
-				<form method="post" action="../lecturer/lecturer interface/action/login-lec.php">
+				<form method="post" action="../lecturer/action/login-lec.php">
 				<center><i><p style="font-size: 24px; color:white"> Lecturer Sign In </p></i></center>
 				<div class="form-group row justify-content-center">
 				<img src ="image/email_16.png" alt="Email" width="40px" height="40px" class="mb-1"></img>
