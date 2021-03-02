@@ -84,23 +84,34 @@
 							
 						
 		
-				<center><div id="lecturer" class="tabcontent" style="display : none">
-				<form method="post" action="../lecturer/action/login-lec.php">
-				<center><i><p style="font-size: 24px; color:white"> Lecturer Sign In </p></i></center>
-				<div class="form-group row justify-content-center">
-				<img src ="image/email_16.png" alt="Email" width="40px" height="40px" class="mb-1"></img>
-				<div class="col-5">
-				<input type="text" class="form-control here" id="lecturer ID" name="lecturer_ID"  placeholder="Lecturer ID" required>
-				</div></div>
-				<div class="form-group row justify-content-center">
-				<img src ="image/email_16.png" alt="Email" width="40px" height="40px" class="mb-1"></img>
-				<div class="col-5">
-				<input type="password" class="form-control here" id="lecturer password" name="lecturer_password" placeholder="Password" required>
-				<i class="fa fa-eye" onclick="myFunctionL()" style="color:yellow"> Show Password</i> 
-				</div></div><br>
-				<input type="submit" value="LOGIN"></form><br>
-				<a href="edit page.html" style="color:white;">Forget Password?</a>
-				</div></center>
+				<center>
+					<div id="lecturer" class="tabcontent" style="display : none">
+						<form method="post" action="../lecturer/action/login-lec.php">
+							<center>
+								<i>
+									<p style="font-size: 24px; color:white"> Lecturer Sign In </p>
+								</i>
+							</center>
+							<div class="form-group row justify-content-center">
+								<img src ="image/email_16.png" alt="Email" width="40px" height="40px" class="mb-1"></img>
+								<div class="col-5">
+									<input type="text" class="form-control here" id="lecturer ID" name="lecturer_ID"  placeholder="Lecturer ID" required>
+								</div>
+							</div>
+							<div class="form-group row justify-content-center">
+								<img src ="image/email_16.png" alt="Email" width="40px" height="40px" class="mb-1"></img>
+								<div class="col-5">
+									<input type="password" class="form-control here" id="lecturer password" name="lecturer_password" placeholder="Password" required>
+									<i class="fa fa-eye" onclick="myFunctionL()" style="color:yellow"> Show Password</i> 
+								</div>
+							</div>
+							<br>
+						<input type="submit" value="LOGIN">
+					</form>
+					<br>
+					<a href="edit page.html" style="color:white;">Forget Password?</a>
+					</div>
+				</center>
 		
 				<center><div id="admin" class="tabcontent" style="display : none">
 				<form method="post" action="PHP/login.php">

@@ -10,7 +10,7 @@ $password = $_POST['lecturer_password'];
 include "conn.php"; //link the conn.php info to here
 
 //step 3: select and compare user from database whether user exist or not(since this is select)
-$sql = "SELECT lect_id FROM lecturer WHERE lect_id ='$name' AND lect_password ='$password'";
+$sql = "SELECT lect_id,lect_password  FROM lecturer WHERE lect_id ='$name' AND lect_password ='$password';";
 $login = mysqli_query($conn, $sql);
 if (mysqli_num_rows($login) !== 1) {
   	  die("<script>alert('User not exist. Please input correct Email and Password')</script>");
