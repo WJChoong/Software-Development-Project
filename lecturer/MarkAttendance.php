@@ -13,7 +13,7 @@
 		<div class="row bg-light">
 			<?php require "design/lecnavtab-profile.php"?>
 				<div class="col-md-9">
-				<div class="container bg-light card body">
+				<div class="bg-light card body">
 					<h3 class="row justify-content-center font-weight-bold">Mark Attendance</h3>
 					<br>
 					<form action="MarkAttendance2.php" method="post">
@@ -24,12 +24,12 @@
 							<option value="#">--Module ID--</option>
 						<?php 			             
 					    //Step 1 - Establishing connection
-						 include('action/conn.php');
+						 include('../conn.php');
 						//Step 3 - Execute SQL query
 						$sql = "SELECT module_id , module_name FROM module GROUP BY module_id";
-						$result = mysqli_query($conn, $sql);
+						$result = mysqli_query($link, $sql);
 						//Step 4 - Process result
-						if(mysqli_affected_rows($conn)>0){
+						if(mysqli_affected_rows($link)>0){
 						for ($i = 0; $i < mysqli_num_rows($result); $i++){
 						$row  = mysqli_fetch_assoc($result);
 						echo '<option value="moduleid">'.$row['module_name'].'</option>';
@@ -86,4 +86,4 @@
 								<button name="submit" type="submit" class="btn btn-primary">Proceed >>></button>
 							</div>
 					    </div></form>
-							</div>
+						</div></div>

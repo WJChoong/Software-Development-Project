@@ -18,12 +18,12 @@
 									echo '<a class="dropdown-item disabled">Module</a>';
 									echo '<div role="separator" class="dropdown-divider"></div>';
 									 //Step 1 - Establishing connection
-									include('action/conn.php');
+									include('../conn.php');
 									//Step 2 - Execute SQL query
 									$sql = 'SELECT * FROM table';
-									$result = mysqli_query($conn, $sql);
+									$result = mysqli_query($link, $sql);
 									//Step 4 - Process result
-									if(mysqli_affected_rows($conn)>0){
+									if(mysqli_affected_rows($link)>0){
 									for ($i = 0; $i < mysqli_num_rows($result); $i++){
 									$row  = mysqli_fetch_assoc($result);
 									echo '<tr>';

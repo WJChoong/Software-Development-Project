@@ -36,44 +36,48 @@
 			<ul class="nav navbar-nav">
 			<li class="nav-item">
 				<img src="image/Logo-APU.png" width="75" height="75" alt="System logo" loading="lazy"></img>
-				<a href="login remake.php"><b>HOME</b></a>
+				<a href="login.php"><b>HOME</b></a>
 				<a href="System operation.php">SYSTEM OPERATION</a>
 				<a href="#" class="dropdown-toggle" data-toggle="dropdown">ABOUT SYSTEM</a>
 				<div class="dropdown-menu">
-					<a href="#" class="dropdown-item">System Background</a>
-					<a href="Board of directors remake.php" class="dropdown-item">Board Of Directors</a>
+					<a href="System Background.php" class="dropdown-item">System Background</a>
+					<a href="Board of directors.php" class="dropdown-item">Board Of Directors</a>
 			    </div>
 				<div class="btn group mb-1"> <!--btn group to separate different dropdown-item from ABOUT SYSTEM and CONTACT-->
 				<a href="#" class="dropdown-toggle" data-toggle="dropdown">CONTACT</a>
 				<div class="dropdown-menu">
-					<a href="FAQs remake.php" class="dropdown-item">FAQs</a>
-					<a href="Contact Information remake.php" class="dropdown-item">Contact Information</a>
+					<a href="FAQs.php" class="dropdown-item">FAQs</a>
+					<a href="Contact Information.php" class="dropdown-item">Contact Information</a>
 			    </div></div>
+					<a href="Notice-template.php">NOTICE</a>
 			</li>
 			</ul>
 			</div>
 			
 			<div class="card-body">
-				<table class="table">
-				<tr>
-					<a href="#" class="choice active" onclick="openTab(event, 'student')">Student</a>
+				<ul class="nav navbar-nav row">
+				<li class="nav-item  ml-5">
+					<a href="#" class="tablinks active" onclick="openTab(event, 'student')">Student</a>
 					<a href="#" class="tablinks" onclick="openTab(event, 'lecturer')">Lecturer</a>
 					<a href="#" class="tablinks" onclick="openTab(event, 'admin')">Administrator</a>
-					<img src ="image/email_16.png" alt="Email" width="40px" height="40px" class="mb-2" style="margin-left: 200px"></img>
-					<img src ="image/rss_16.png" alt="Rss" width="40px" height="40px" class="mb-2"></img>
-					<img src ="image/twitter_16.png" alt="Twitter" width="40px" height="40px" class="mb-2"></img>
-				</tr>
-				</table><hr>
+					<img src ="image/email_16.png" alt="Email" width="40px" height="40px" style="margin-left: 150px"></img>
+					<img src ="image/rss_16.png" alt="Rss" width="40px" height="40px"></img>
+					<img src ="image/twitter_16.png" alt="Twitter" width="40px" height="40px"></img>
+				</li>
+				</ul>
+				<hr>
+				
+				
 				<center><div id="student" class="tabcontent">
 				<form method="post" action="student interface/login-stud.php">
 				<i><p style="font-size: 24px; color:white"> Student Sign In </p></i>
 				<div class="form-group row justify-content-center">
-				<img src ="image/email_16.png" alt="Email" width="40px" height="40px" class="mb-1"></img>
+				<img src ="image/id.jpg" alt="Email" width="50px" height="40px" class="mb-1"></img>
 				<div class="col-5">
 				<input type="text" class="form-control here" id="student ID" name="student_ID" placeholder="Student ID" required>
 				</div></div>
 				<div class="form-group row justify-content-center">
-				<img src ="image/email_16.png" alt="Email" width="40px" height="40px" class="mb-1"></img>
+				<img src ="image/password.jpg" alt="Email" width="50px" height="40px" class="mb-1"></img>
 				<div class="col-5">
 				<input type="password" class="form-control here" id="student password" name="student_password" placeholder="Password" required>
 				<i class="fa fa-eye" onclick="myFunctionS()" style="color:yellow"> Show Password</i> 
@@ -84,45 +88,34 @@
 							
 						
 		
-				<center>
-					<div id="lecturer" class="tabcontent" style="display : none">
-						<form method="post" action="../lecturer/action/login-lec.php">
-							<center>
-								<i>
-									<p style="font-size: 24px; color:white"> Lecturer Sign In </p>
-								</i>
-							</center>
-							<div class="form-group row justify-content-center">
-								<img src ="image/email_16.png" alt="Email" width="40px" height="40px" class="mb-1"></img>
-								<div class="col-5">
-									<input type="text" class="form-control here" id="lecturer ID" name="lecturer_ID"  placeholder="Lecturer ID" required>
-								</div>
-							</div>
-							<div class="form-group row justify-content-center">
-								<img src ="image/email_16.png" alt="Email" width="40px" height="40px" class="mb-1"></img>
-								<div class="col-5">
-									<input type="password" class="form-control here" id="lecturer password" name="lecturer_password" placeholder="Password" required>
-									<i class="fa fa-eye" onclick="myFunctionL()" style="color:yellow"> Show Password</i> 
-								</div>
-							</div>
-							<br>
-						<input type="submit" value="LOGIN">
-					</form>
-					<br>
-					<a href="edit page.html" style="color:white;">Forget Password?</a>
-					</div>
-				</center>
+				<center><div id="lecturer" class="tabcontent" style="display : none">
+				<form method="post" action="../lecturer/action/login-lec.php">
+				<center><i><p style="font-size: 24px; color:white"> Lecturer Sign In </p></i></center>
+				<div class="form-group row justify-content-center">
+				<img src ="image/id.jpg" alt="Email" width="50px" height="40px" class="mb-1"></img>
+				<div class="col-5">
+				<input type="text" class="form-control here" id="lecturer ID" name="lecturer_ID"  placeholder="Lecturer ID" required>
+				</div></div>
+				<div class="form-group row justify-content-center">
+				<img src ="image/password.jpg" alt="Email" width="50px" height="40px" class="mb-1"></img>
+				<div class="col-5">
+				<input type="password" class="form-control here" id="lecturer password" name="lecturer_password" placeholder="Password" required>
+				<i class="fa fa-eye" onclick="myFunctionL()" style="color:yellow"> Show Password</i> 
+				</div></div><br>
+				<input type="submit" value="LOGIN"></form><br>
+				<a href="edit page.html" style="color:white;">Forget Password?</a>
+				</div></center>
 		
 				<center><div id="admin" class="tabcontent" style="display : none">
 				<form method="post" action="PHP/login.php">
 				<center><i><p style="font-size: 24px; color:white"> Administrator Sign In </p></i></center>
 				<div class="form-group row justify-content-center">
-				<img src ="image/email_16.png" alt="Email" width="40px" height="40px" class="mb-1"></img>
+				<img src ="image/id.jpg" alt="Email" width="50px" height="40px" class="mb-1"></img>
 				<div class="col-5">
 				<input type="text" class="form-control here" id="admin ID" name="admin_ID" placeholder="Administrator ID" required>
 				</div></div>
 				<div class="form-group row justify-content-center">
-				<img src ="image/email_16.png" alt="Email" width="40px" height="40px" class="mb-1"></img>
+				<img src ="image/password.jpg" alt="Email" width="50px" height="40px" class="mb-1"></img>
 				<div class="col-5">
 				<input type="password" class="form-control here" id="admin password" name="admin password"  placeholder="Password" required>
 				<i class="fa fa-eye" onclick="myFunctionA()" style="color:yellow"> Show Password</i> 

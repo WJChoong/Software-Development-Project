@@ -19,30 +19,31 @@
 	}
 	#header {
 	font-family: Garamond;
-	color: white
+	color: white;
 	}
 	</style>
 
 	<body style="background-image: url('image/background.jpg'); background-size: cover; background-repeat: no-repeat; height: 100%">
 	<div class = "d-flex justify-content-center h-100">
-		<div class="card" style="height: auto; margin: auto; width: 70%; background-color: rgba(0,0,0,0.5)">
+		<div class="card" style="height: auto; margin: auto; width:90%; background-color: rgba(0,0,0,0.5)">
 			<center><div class="card-header">
 			<ul class="nav navbar-nav">
 			<li class="nav-item">
 				<img src="image/Logo-APU.png" width="75" height="75" alt="System logo" loading="lazy"></img>
-				<a href="login remake.php">HOME</a>
+				<a href="login.php">HOME</a>
 				<a href="System operation.php"><b>SYSTEM OPERATION</b></a>
 				<a href="#" class="dropdown-toggle" data-toggle="dropdown">ABOUT SYSTEM</a>
 				<div class="dropdown-menu">
-					<a href="#" class="dropdown-item">System Background</a>
-					<a href="Board of directors remake.php" class="dropdown-item">Board Of Directors</a>
+					<a href="System Background.php" class="dropdown-item">System Background</a>
+					<a href="Board of directors.php" class="dropdown-item">Board Of Directors</a>
 			    </div>
 				<div class="btn group mb-1"> <!--btn group to separate different dropdown-item from ABOUT SYSTEM and CONTACT-->
 				<a href="#" class="dropdown-toggle" data-toggle="dropdown">CONTACT</a>
 				<div class="dropdown-menu">
-					<a href="FAQs remake.php" class="dropdown-item">FAQs</a>
-					<a href="Contact Information remake.php" class="dropdown-item">Contact Information</a>
+					<a href="FAQs.php" class="dropdown-item">FAQs</a>
+					<a href="Contact Information.php" class="dropdown-item">Contact Information</a>
 			    </div></div>
+					<a href="Notice-template.php">NOTICE</a>
 			</li>
 			</ul>
 			</div></center>

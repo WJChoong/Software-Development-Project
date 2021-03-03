@@ -10,7 +10,7 @@
 		<a class="list-group-item list-group-item-action" href="#">Notification</a>
 
 	  	  
-		<a class="list-group-item list-group-item-action" href="#">Log Out</a>
+		<a class="list-group-item list-group-item-action" href="action/logout-lec.php">Log Out</a>
 	 
 		</div>
 </div>
