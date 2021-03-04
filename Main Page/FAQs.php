@@ -37,7 +37,7 @@
 	<body style="background-image: url('image/background.jpg'); background-size: cover; background-repeat: no-repeat; height: 100%">
 	<div class="d-flex justify-content-center h-100">
 		<div class="card" style="height: auto; margin: auto; width: 90%; background-color: rgba(0,0,0,0.6)">
-			<center><div class="card-header">
+			<div class="card-header d-flex justify-content-center h-100">
 			<ul class="nav navbar-nav">
 			<li class="nav-item">
 				<img src="image/Logo-APU.png" width="75" height="75" alt="System logo" loading="lazy"></img>
@@ -57,7 +57,7 @@
 					<a href="Notice-template.php">NOTICE</a>
 			</li>
 			</ul>
-			</div></center>
+			</div>
 			
 			<div class="card-body">
 			<center><h1 style="color: white"> FAQs </h1></center>

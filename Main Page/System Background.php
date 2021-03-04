@@ -59,7 +59,7 @@
 	<body style="background-image: url('image/background.jpg'); background-size: cover; background-repeat: no-repeat; height: 100%">
 	<div class="d-flex justify-content-center h-100">
 		<div class="card" style="height: auto; margin: auto; width: 90%; background-color: rgba(0,0,0,0.5)">
-			<center><div class="card-header">
+			<div class="card-header d-flex justify-content-center h-100">
 			<ul class="nav navbar-nav">
 			<li class="nav-item">
 				<img src="image/Logo-APU.png" width="75" height="75" alt="System logo" loading="lazy"></img>
@@ -79,7 +79,7 @@
 					<a href="Notice-template.php">NOTICE</a>
 			</li>
 			</ul>
-			</div></center>
+			</div>
 			
 			<div class="card-body">
 			<center><h1 style="color: white"> System Background </h1></center>
@@ -126,48 +126,39 @@
 			<div class="col-2">
 			<div class="card" style="background-color: transparent">
 			<img src="image/profile.jpg" class="card-img-top" alt="profile.jpg"></img>
-			 <p class="card-text">
-             <p style="text-align: center; color: white;">Individual Account (Confidentiality)</p>
-             </p>
+			 <p class="card-text" style="text-align: center; color: white;">Individual Account (Confidentiality)</p>
 			 </div>
 			 </div>
 			 
 			 <div class="col-2">
 			<div class="card" style="background-color: transparent">
 			<img src="image/timetable.jpg" class="card-img-top" alt="timetable.jpg"></img>
-			 <p class="card-text">
-             <p style="text-align: center; color: white;">Weekly Timetable (Availability)</p>
-             </p>
+			 <p class="card-text" style="text-align: center; color: white;">Weekly Timetable (Availability)</p>
 			 </div>
 			 </div>
 			 
 			<div class="col-2">
 			<div class="card" style="background-color: transparent">
 			<img src="image/attendance history.jpg" class="card-img-top" alt="attendance history.jpg"></img>
-			 <p class="card-text">
-             <p style="text-align: center; color: white;">Attendance History Record (Integrity)</p>
-             </p>
+			 <p class="card-text" style="text-align: center; color: white;">Attendance History Record (Integrity)</p>
 			 </div>
 			 </div>
 			 
 			 <div class="col-2">
 			<div class="card" style="background-color: transparent">
 			<img src="image/EC.jpg" class="card-img-top" alt="EC.jpg"></img>
-			 <p class="card-text">
-             <p style="text-align: center; color: white;">Extenuating Circumstances (EC)</p>
-             </p>
+			 <p class="card-text" style="text-align: center; color: white;">Extenuating Circumstances (EC)</p>
 			 </div>
 			 </div>
 			 
 			 <div class="col-2">
 			<div class="card" style="background-color: transparent">
 			<img src="image/upcoming event.jpg" class="card-img-top" alt="upcoming event.jpg"></img>
-			 <p class="card-text">
-             <p style="text-align: center; color: white;">Notification</p>
-             </p>
+			 <p class="card-text" style="text-align: center; color: white;">Notification</p>
 			 </div>
 			 </div>
 			
+		</div>
 		</div>
 		<script type="text/javascript" src="External/tab.js"></script>
 		<script type="text/javascript" src="External/slideshow.js"></script>

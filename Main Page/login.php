@@ -60,7 +60,7 @@
 					<a href="#" class="tablinks active" onclick="openTab(event, 'student')">Student</a>
 					<a href="#" class="tablinks" onclick="openTab(event, 'lecturer')">Lecturer</a>
 					<a href="#" class="tablinks" onclick="openTab(event, 'admin')">Administrator</a>
-					<img src ="image/email_16.png" alt="Email" width="40px" height="40px" style="margin-left: 150px"></img>
+					<img src ="image/email_16.png" alt="Email" width="40px" height="40px" style="margin-left: 155px"></img>
 					<img src ="image/rss_16.png" alt="Rss" width="40px" height="40px"></img>
 					<img src ="image/twitter_16.png" alt="Twitter" width="40px" height="40px"></img>
 				</li>
