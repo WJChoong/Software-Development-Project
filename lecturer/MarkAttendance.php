@@ -16,28 +16,50 @@
 				<div class="bg-light card body">
 					<h3 class="row justify-content-center font-weight-bold">Mark Attendance</h3>
 					<br>
-					<form action="MarkAttendance2.php" method="post">
+					<form method="post" action="MarkAttendance2.php">
 						<div class="form-group row">
 							<label class="col-3 col-form-label">Module ID</label> 
 							<div class="col-8">
-							<select class="custom-select">
-							<option value="#">--Module ID--</option>
+							<select class="custom-select form-control" name="module_id" required>
+							<option value="">--Module ID--</option>
 						<?php 			             
 					    //Step 1 - Establishing connection
 						 include('../conn.php');
 						//Step 3 - Execute SQL query
-						$sql = "SELECT module_id , module_name FROM module GROUP BY module_id";
+						$sql = "SELECT module_id , module_name FROM module WHERE lect_id = '".$_SESSION['lect_id']."' GROUP BY module_id";
 						$result = mysqli_query($link, $sql);
 						//Step 4 - Process result
 						if(mysqli_affected_rows($link)>0){
 						for ($i = 0; $i < mysqli_num_rows($result); $i++){
 						$row  = mysqli_fetch_assoc($result);
-						echo '<option value="moduleid">'.$row['module_name'].'</option>';
+						echo '<option value="module_name">'.$row['module_name'].'</option>';
 						}
 						}
 						?>
 						</select>
 					    </div>
+						</div>
+						<div class="form-group row">
+							<label class="col-3 col-form-label">Module Group</label> 
+							<div class="col-8">
+								<select class="custom-select form-control" name="module_group" required>
+							<option value="">--Module Group--</option>
+						<?php 			             
+					    //Step 1 - Establishing connection
+						 include('../conn.php');
+						//Step 3 - Execute SQL query
+						$sql = "SELECT module_group FROM module WHERE lect_id = '".$_SESSION['lect_id']."'";
+						$result = mysqli_query($link, $sql);
+						//Step 4 - Process result
+						if(mysqli_affected_rows($link)>0){
+						for ($i = 0; $i < mysqli_num_rows($result); $i++){
+						$row  = mysqli_fetch_assoc($result);
+						echo '<option value="module_group">'.$row['module_group'].'</option>';
+						}
+						}
+						?>
+						</select> 
+							</div>
 						</div>
 						<div class="form-group row">
 							<label class="col-3 col-form-label">Date</label> 
@@ -54,8 +76,8 @@
 					    <div class="form-group row">
 					    <label class="col-3 col-form-label">Duration</label> 
 						<div class="col-8">
-							<select class="custom-select">
-									<option value="#">--Duration--</option>
+							<select class="custom-select form-control" name="duration" required>
+									<option value="">--Duration--</option>
 									<option value="1h">1 hour</option>
 									<option value="1h30m">1 hour 30 minutes</option>
 									<option value="2h">2 hours</option>
@@ -73,8 +95,8 @@
 						<div class="form-group row">
 							<label class="col-3 col-form-label">Class Type</label> 
 							<div class="col-8">
-								<select class="custom-select" name="class_type">
-									<option value="#">--Class Type--</option>
+								<select class="custom-select form-control" name="class_type" required>
+									<option value="">--Class Type--</option>
 									<option value="lecture">Lecture</option>
 									<option value="tutorial">Tutorial</option>
 									<option value="lab">Lab</option>
