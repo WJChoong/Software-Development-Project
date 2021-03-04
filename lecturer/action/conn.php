@@ -4,9 +4,9 @@ $user = "root";
 $pass = "";
 $db = "sdp assignment";
 
-$conn = mysqli_connect($host, $user, $pass, $db);
+$link = mysqli_connect($host, $user, $pass, $db);
 
-if (!$conn) {
+if (!$link) {
 	die("Connection failed: ".mysqli_connect_error());
 }
 ?>
