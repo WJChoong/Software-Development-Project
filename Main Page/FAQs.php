@@ -35,28 +35,29 @@
 	</style>
 
 	<body style="background-image: url('image/background.jpg'); background-size: cover; background-repeat: no-repeat; height: 100%">
-	<div class = "d-flex justify-content-center h-100">
-		<div class="card" style="height: auto; margin-top: auto; margin-bottom: auto; width: auto; background-color: rgba(0,0,0,0.5)">
-			<center><div class="card-header">
+	<div class="d-flex justify-content-center h-100">
+		<div class="card" style="height: auto; margin: auto; width: 90%; background-color: rgba(0,0,0,0.6)">
+			<div class="card-header d-flex justify-content-center h-100">
 			<ul class="nav navbar-nav">
 			<li class="nav-item">
 				<img src="image/Logo-APU.png" width="75" height="75" alt="System logo" loading="lazy"></img>
-				<a href="login remake.php">HOME</a>
+				<a href="login.php">HOME</a>
 				<a href="System operation.php">SYSTEM OPERATION</a>
 				<a href="#" class="dropdown-toggle" data-toggle="dropdown">ABOUT SYSTEM</a>
 				<div class="dropdown-menu">
-					<a href="#" class="dropdown-item">System Background</a>
-					<a href="Board of directors remake.php" class="dropdown-item">Board Of Directors</a>
+					<a href="System Background.php" class="dropdown-item">System Background</a>
+					<a href="Board of directors.php" class="dropdown-item">Board Of Directors</a>
 			    </div>
 				<div class="btn group mb-1"> <!--btn group to separate different dropdown-item from ABOUT SYSTEM and CONTACT-->
 				<a href="#" class="dropdown-toggle" data-toggle="dropdown"><b>CONTACT</b></a>
 				<div class="dropdown-menu">
-					<a href="FAQs remake.php" class="dropdown-item"><b>FAQs</b></a>
-					<a href="Contact Information remake.php" class="dropdown-item">Contact Information</a>
+					<a href="FAQs.php" class="dropdown-item"><b>FAQs</b></a>
+					<a href="Contact Information.php" class="dropdown-item">Contact Information</a>
 			    </div></div>
+					<a href="Notice-template.php">NOTICE</a>
 			</li>
 			</ul>
-			</div></center>
+			</div>
 			
 			<div class="card-body">
 			<center><h1 style="color: white"> FAQs </h1></center>
@@ -93,6 +94,7 @@
 			<p>If you have any inquiries, please find us from the following link.</p>
 			<p>You may contact us by phone, fax or email. We also welcome you to visit us directly at our work office.</p>
 			<p><b><u><a href="Contact Information.php">Contact-Contact Information</a></u></b></p>
+			</div>
 			</div>
 			</div>
 			</body>

@@ -45,15 +45,15 @@
 					<tbody>
 						<?php
 			             //Step 1 - Establishing connection
-						 include('action/conn.php');
+						 include('../conn.php');
 						//Step 2 - Handling connection error
 						//Step 3 - Execute SQL query
 						$sql = 'SELECT * 
 								FROM ec
 								WHERE EC_Status = "2"';
-						$result = mysqli_query($conn, $sql);
+						$result = mysqli_query($link, $sql);
 						//Step 4 - Process result
-						if(mysqli_affected_rows($conn)>0){
+						if(mysqli_affected_rows($link)>0){
 						for ($i = 0; $i < mysqli_num_rows($result); $i++){
 						$row  = mysqli_fetch_assoc($result);
 						echo '<tr>';
@@ -68,7 +68,7 @@
 			
 			//Step 5 - Free resource & close connection
 			mysqli_free_result($result);
-			mysqli_close($conn);
+			mysqli_close($link);
 
 			?>      
 					</tbody>
