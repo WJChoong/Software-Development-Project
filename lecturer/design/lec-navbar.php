@@ -24,7 +24,7 @@
 					<a href="../lecturer/Profile.php" class="dropdown-item">Profile</a>
 					<a href="../lecturer/ChangePassword.php" class="dropdown-item">Change Password</a>
 					<div class="dropdown-divider"></div>
-					<a href="#"class="dropdown-item">Logout</a>
+					<a class="dropdown-item" href="action/logout-lec.php">Logout</a>
 				</div>
 			</li>
 		</ul>

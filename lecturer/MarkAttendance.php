@@ -5,7 +5,7 @@
 	<?php
 	session_start();
 		if(!isset($_SESSION['lect_id'])){
-		die(header("location: ../login.php"));
+		die(header("location: ../Main Page/login.php"));
 	}
 	?>
 	<?php require "design/lec-navbar.php"?>
@@ -20,19 +20,19 @@
 						<div class="form-group row">
 							<label class="col-3 col-form-label">Module ID</label> 
 							<div class="col-8">
-							<select class="custom-select form-control" name="module_id" required>
+							<select class="custom-select form-control" name="module_name" required>
 							<option value="">--Module ID--</option>
 						<?php 			             
 					    //Step 1 - Establishing connection
 						 include('../conn.php');
 						//Step 3 - Execute SQL query
-						$sql = "SELECT module_id , module_name FROM module WHERE lect_id = '".$_SESSION['lect_id']."' GROUP BY module_id";
+						$sql = "SELECT module_name FROM module WHERE lect_id = '".$_SESSION['lect_id']."' GROUP BY module_id";
 						$result = mysqli_query($link, $sql);
 						//Step 4 - Process result
 						if(mysqli_affected_rows($link)>0){
 						for ($i = 0; $i < mysqli_num_rows($result); $i++){
 						$row  = mysqli_fetch_assoc($result);
-						echo '<option value="module_name">'.$row['module_name'].'</option>';
+						echo '<option>'.$row['module_name'].'</option>';
 						}
 						}
 						?>
@@ -54,7 +54,7 @@
 						if(mysqli_affected_rows($link)>0){
 						for ($i = 0; $i < mysqli_num_rows($result); $i++){
 						$row  = mysqli_fetch_assoc($result);
-						echo '<option value="module_group">'.$row['module_group'].'</option>';
+						echo '<option>'.$row['module_group'].'</option>';
 						}
 						}
 						?>

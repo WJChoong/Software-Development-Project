@@ -1,6 +1,6 @@
 <?php
 //connect to database
-require "conn.php"; 
+require "../conn.php"; 
 
 //get data
 $sql1 = "SELECT lect_name, 

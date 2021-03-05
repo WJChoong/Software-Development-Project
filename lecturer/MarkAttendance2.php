@@ -5,7 +5,7 @@
 	<?php
 	session_start();
 		if(!isset($_SESSION['lect_id'])){
-		die(header("location: ../login.php"));
+		die(header("location: ../Main Page/login.php"));
 	}
 	?>
 	<?php require "design/lec-navbar.php"?>
@@ -21,27 +21,27 @@
 						<tr>
 							<th>Student ID</th>
 							<th>Student Name</th>
-							<th>Student Intake</th>
+							<th>Course Name</th>
 							<th>Status</th>
 						</tr>
 					</thead>
 					<tbody>
+
 <?php
 //Step1:Get the information from the form & $_POST[''] is refer to your input object name
-$moduleid = $_POST['module_id'];
+$moduleid = $_POST['module_name'];
 $modulegroup = $_POST['module_group'];
 $date = $_POST['date'];
 $start = $_POST['start_time'];
 $duration = $_POST['duration'];
 $classtype = $_POST['class_type'];
-
 //step 2: do connection to the database
 include "../conn.php"; //link the conn.php info to here
 //step 3: select and compare user from database whether user exist or not(since this is select)
 $sql = "SELECT *
 		FROM student S JOIN course C JOIN module M
-		WHERE M.module_name = $moduleid
-		AND M.module_group = $modulegroup
+		WHERE M.module_name = '$moduleid'
+		AND M.module_group = '$modulegroup'
 		AND M.module_id = C.module_id
 		AND M.module_group = C.module_group
 		AND C.course_id = S.course_id";

@@ -69,7 +69,9 @@
 						$sql = "SELECT *, M.module_name
 								FROM timetable T JOIN module M
 								WHERE T.module_id = M.module_id 
-								AND T.time_date = '$date1'";
+								AND T.time_date = '$date1'
+								AND T.lect_id = '".$_SESSION['lect_id']."'
+								GROUP BY T.time_id";
 						$result = mysqli_query($link, $sql);
 						//Step 3 - Process result
 						if(mysqli_affected_rows($link)>0){
@@ -82,7 +84,7 @@
 						echo '<td>'.$row['time_date'].'</td>';				
 						echo '<td>'.$row['time_time'].'</td>';
 						echo '<td>'.$row['module_id'].'<br>'.$row['module_name'].'</td>';
-						echo '<td>'.$row['time_group_id'].'</td>';
+						echo '<td>'.$row['time_group'].'</td>';
 						}
 						}
 						?>          
