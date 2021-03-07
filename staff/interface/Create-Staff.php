@@ -4,8 +4,10 @@
 		<title>Untitled Document</title>
 	</head>
 	
-	<?php require "../action/conn.php"?>
-	<?php require "../design/staff-navbar.php"?>
+	<?php 
+		require "../../conn.php";
+		require "../design/staff-navbar.php";
+	?>
 	<body style="background-color: rgba(0,0,0,0.1);">
 		<div class="row bg-light">
 			<?php require "../design/navtab-addstaff.php"?>

@@ -2,7 +2,7 @@
 // if they clicked on the submit button
 if (isset($_POST["submit"])){ 
     //connect to database
-    require "conn.php"; 
+    require "../../conn.php"; 
 
     // store data
     $name = $_POST["name"];
