@@ -46,7 +46,7 @@ nav a:hover
 body 
 {
 	background-image: url('apu_still01_entrance_0.jpg');
-	background-color:#f2f2f2;
+	background-color:#cccccc;
 	padding: 10px;
 }
 
@@ -87,14 +87,16 @@ body
 <main>
 
 <form action="/action_page.php">
-	<label for="Date">Date: </label>
-	<input type="date"><br><br>
-	<label for="subject">Subject: </label>
-	<input type="text"><br><br>	
-	<label for="subject">Lecturer: </label>
-	<input type="text"><br><br>	
-	<label for="subject">Main Reason: </label>
-	<input type="text"><br><br>
+	<label for="attend_id">Attendance Id: </label>
+	<input type="attend_id"><br><br>
+	<label for="student_id">Student Id: </label>
+	<input type="student_id"><br><br>
+	<label for="EC_reason">EC Reason: </label>
+	<input type="EC_reason"><br><br>
+	<label for="EC_date">EC Date: </label>
+	<label for="lect_id">Lecturer ID: </label>
+	<input type="lect_id"><br><br>
+
 	<label for="myfile">Add your file here:  </label>
 	<input type="file" id="myfile" name="myfile"><br><br>
 </form>
