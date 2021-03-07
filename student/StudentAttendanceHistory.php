@@ -77,6 +77,15 @@ table, th, td
   background-color: #ff1a1a;
 }
 
+th
+{
+	 width: 250px;
+}
+
+
+function percentage(partialValue, totalValue) {
+   return (100 * partialValue) / totalValue;
+} 
 
 </style>
 
@@ -91,109 +100,163 @@ table, th, td
 	<a href="logout.php">Log Out</a>
 </nav>
 
-
-
 <Main>
+
 <h1>Attendance History</h1>
 <p>“Attend today, and achieve tomorrow” and “80% of success is showing up!”</p>
-<div class="container">
-<table>
-<tbody>
-<tr>
-<td style="text-align: center;" width="220">
-<p><strong>Module</strong></p>
-</td>
-<td style="text-align: center;" width="220">
-<p><strong>Overall Class</strong></p>
-</td>
-<td style="text-align: center;" width="220">
-<p><strong>Overall Percentage</strong></p>
-</td>
-</tr>
-<tr>
-<td style="text-align: center;" width="220">
-<p>Information System</p>
-<p>&nbsp;</p>
-<p>Operating System</p>
-<p>&nbsp;</p>
-<p>Web Development</p>
-<p>&nbsp;</p>
-<p>Java Programming</p>
-<p>&nbsp;</p>
-<p>Numerical Methods</p>
-</td>
-<td style="text-align: center;" width="200">
-<p>9/11</p>
-<p>&nbsp;</p>
-<p>10/11</p>
-<p>&nbsp;</p>
-<p>11/11</p>
-<p>&nbsp;</p>
-<p>10/11</p>
-<p>&nbsp;</p>
-<p>11/11</p>
-</td>
-<td style="text-align: center;" width="200">
-<p>72%</p>
-<p>&nbsp;</p>
-<p>90%</p>
-<p>&nbsp;</p>
-<p>100%</p>
-<p>&nbsp;</p>
-<p>90%</p>
-<p>&nbsp;</p>
-<p>100%</p>
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-<p>&nbsp;</p>
-
-
-<h1>Absent Date</h1>
-<p>“University keeps you safe, it educates you, it prepares you for your future. Don’t miss out!”</p>
-<table>
-<tbody>
-<tr>
-<td style="text-align: center;" width="220">
-<p><strong>Module</strong></p>
-</td>
-<td style="text-align: center;" width="220">
-<p><strong>Date</strong></p>
-</td>
-</tr>
-<tr>
-<td style="text-align: center;" width="220">
-<p>Information System</p>
-<p>&nbsp;</p>
-<p>Java Programming</p>
-<p>&nbsp;</p>
-<p>Information System</p>
-<p>&nbsp;</p>
-<p>Operating System</p>
-</td>
-<td style="text-align: center;" width="220">
-<p>23/11/2020</p>
-<p>&nbsp;</p>
-<p>7/12/2020</p>
-<p>&nbsp;</p>
-<p>9/12/2020</p>
-<p>&nbsp;</p>
-<p>11/01/2021</p>
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-<p>&nbsp;</p>
-
-
-</body>
-
-	<div class="center">
+	<div class="left">
 		<input type="submit" value="Attendance" class="btn">	
 	</div>
+
+
+<h2>Semester 1</h2>
+<table>
+	<tr>
+		<th>Attend ID</th>
+		<th>Overall Class</th>
+		<th>Present Class</th>
+	</tr>
+<?php
+$link = mysqli_connect('localhost','root','','sdp assignment','3306');
+foreach($link->query('SELECT attend_status,attend_id,COUNT(*)
+FROM attendancestudent WHERE attend_status="Present" and attend_id="AT88" GROUP BY attend_id;') as $column)	
+foreach($link->query('SELECT attend_status,attend_id,COUNT(*)
+FROM attendancestudent WHERE attend_status="Present" and "Absent" or attend_id="AT88" GROUP BY attend_id;') as $row) {
+echo "<tr>";
+echo "<td>" . $row['attend_id'] . "</td>";
+echo "<td>" . $row['COUNT(*)'] . "</td>";
+echo "<td>" . $column['COUNT(*)'] . "</td>";
+echo "</tr>";
+}
+?>
+
+</table>
+<br>
+
+
+<h2>Semester 2</h2>
+<table>
+	<tr>
+		<th>Attend ID</th>
+		<th>Overall Class</th>
+		<th>Present Class</th>
+	</tr>
+<?php
+$link = mysqli_connect('localhost','root','','sdp assignment','3306');
+foreach($link->query('SELECT attend_status,attend_id,COUNT(*)
+FROM attendancestudent WHERE attend_status="Present" and attend_id="AT99" GROUP BY attend_id;') as $column)	
+foreach($link->query('SELECT attend_status,attend_id,COUNT(*)
+FROM attendancestudent WHERE attend_status="Present" and "Absent" or attend_id="AT99" GROUP BY attend_id;') as $row) {
+echo "<tr>";
+echo "<td>" . $row['attend_id'] . "</td>";
+echo "<td>" . $row['COUNT(*)'] . "</td>";
+echo "<td>" . $column['COUNT(*)'] . "</td>";
+echo "</tr>";
+}
+?>
+</table>
+
+<h2>Semester 3</h2>
+<table>
+	<tr>
+		<th>Attend ID</th>
+		<th>Overall Class</th>
+		<th>Present Class</th>
+	</tr>
+<?php
+$link = mysqli_connect('localhost','root','','sdp assignment','3306');
+foreach($link->query('SELECT attend_status,attend_id,COUNT(*)
+FROM attendancestudent WHERE attend_status="Present" and attend_id="AT77" GROUP BY attend_id;') as $column)	
+foreach($link->query('SELECT attend_status,attend_id,COUNT(*)
+FROM attendancestudent WHERE attend_status="Present" and "Absent" or attend_id="AT77" GROUP BY attend_id;') as $row) {
+echo "<tr>";
+echo "<td>" . $row['attend_id'] . "</td>";
+echo "<td>" . $row['COUNT(*)'] . "</td>";
+echo "<td>" . $column['COUNT(*)'] . "</td>";
+echo "</tr>";
+}
+?>
+</table>
+
+
+<h2>Semester 4</h2>
+<table>
+	<tr>
+		<th>Attend ID</th>
+		<th>Overall Class</th>
+		<th>Present Class</th>
+	</tr>
+<?php
+$link = mysqli_connect('localhost','root','','sdp assignment','3306');
+foreach($link->query('SELECT attend_status,attend_id,COUNT(*)
+FROM attendancestudent WHERE attend_status="Present" and attend_id="AT66" GROUP BY attend_id;') as $column)	
+foreach($link->query('SELECT attend_status,attend_id,COUNT(*)
+FROM attendancestudent WHERE attend_status="Present" and "Absent" or attend_id="AT66" GROUP BY attend_id;') as $row) {
+echo "<tr>";
+echo "<td>" . $row['attend_id'] . "</td>";
+echo "<td>" . $row['COUNT(*)'] . "</td>";
+echo "<td>" . $column['COUNT(*)'] . "</td>";
+echo "</tr>";
+}
+?>
+</table>
+
+<h2>Semester 5</h2>
+<table>
+	<tr>
+		<th>Attend ID</th>
+		<th>Overall Class</th>
+		<th>Present Class</th>
+	</tr>
+<?php
+$link = mysqli_connect('localhost','root','','sdp assignment','3306');
+foreach($link->query('SELECT attend_status,attend_id,COUNT(*)
+FROM attendancestudent WHERE attend_status="Present" and attend_id="AT55" GROUP BY attend_id;') as $column)	
+foreach($link->query('SELECT attend_status,attend_id,COUNT(*)
+FROM attendancestudent WHERE attend_status="Present" and "Absent" or attend_id="AT55" GROUP BY attend_id;') as $row) {
+echo "<tr>";
+echo "<td>" . $row['attend_id'] . "</td>";
+echo "<td>" . $row['COUNT(*)'] . "</td>";
+echo "<td>" . $column['COUNT(*)'] . "</td>";
+echo "</tr>";
+}
+?>
+</table>
+
+<br><br>
+
+<h1>Overall Attendance</h1>
+<p>“Believe in yourself and all that you are. Know that there is something inside you that is greater than any obstacle.”<br>
+– Christian D. Larson</p>
+	<table>
+	<tr>
+		<th>Attend Id</th>
+		<th>Attend Status</th>
+		<th>Lecturer Id</th>
+		<th>Student Id</th>
+		<th>Time Id</th>
+		<th>Semester</th>
+	</tr>
+	<?php
+	$link = mysqli_connect('localhost','root','','sdp assignment','3306');
+	$sql = "SELECT * FROM attendancestudent";
+	$result = $link-> query($sql);
+	
+	if($result->num_rows > 0) {
+		while ($row = $result-> fetch_assoc()){
+			echo "<tr><td>" . $row["attend_id"] . "</td><td>" . $row["attend_status"] . "</td><td>" . $row["lect_id"] . "</td><td>" . $row["student_id"] . "</td><td>" . $row["time_id"] . "</td><td>" . $row["semester"] . "</td></tr>";
+		}
+	}
+	else{
+		echo "No Results";
+	}
+	$link-> close();
+	?>
+	</table>
+
+<br><br>
+</body>
+	
 </Main>
 
 </html>

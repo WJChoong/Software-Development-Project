@@ -4,7 +4,7 @@
 //second '' ->username for login database
 //third '' ->password
 //fourth '' ->database name
-$conn = mysqli_connect('localhost','root','','student','3306');
+$link = mysqli_connect('localhost','root','','student','3306');
 
 if(mysqli_connect_errno())
 {

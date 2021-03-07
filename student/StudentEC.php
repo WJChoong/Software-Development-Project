@@ -47,7 +47,7 @@ nav a:hover
 body 
 {
 	background-image: url('apu_still01_entrance_0.jpg');
-	background-color:#cccccc;
+	background-color:#f2f2f2;
 	padding: 10px;
 }
 

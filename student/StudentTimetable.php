@@ -73,7 +73,7 @@ th
 </nav>
 
 
-<center><h1>Timetable based on Attendance<h1></center>
+<center><h1>Student's Timetable<h1></center>
 <center><p>“Believe in yourself and all that you are. Know that there is something inside you that is greater than any obstacle.”<br>
 – Christian D. Larson<p></center>
 <main>
