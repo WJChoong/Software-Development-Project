@@ -84,10 +84,10 @@ table, th, td
 
 <nav>
 	<a href="LoginPage">Home page</a>
-	<a href="Account.hmtl">Account</a>
-	<a href="StudentAttendanceHistory.html">Attendance History</a>
-	<a href="StudentTimetable.html">Timetable</a> 	
-	<a href="StudentEC.html">Student EC</a> 
+	<a href="Account.php">Account</a>
+	<a href="StudentAttendanceHistory.php">Attendance History</a>
+	<a href="StudentTimetable.php">Timetable</a> 	
+	<a href="StudentEC.php">Student EC</a> 
 	<a href="logout.php">Log Out</a>
 </nav>
 

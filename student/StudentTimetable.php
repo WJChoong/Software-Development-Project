@@ -55,15 +55,20 @@ body
 	padding: 10px;
 }
 
+th
+{
+	 width: 300px;
+}
+
 </style>
 <body>
 
 <nav>
 	<a href="LoginPage">Home page</a>
-	<a href="Account.hmtl">Account</a>
-	<a href="StudentAttendanceHistory.html">Attendance History</a>
-	<a href="StudentTimetable.html">Timetable</a> 	
-	<a href="StudentEC.html">Student EC</a> 
+	<a href="Account.php">Account</a>
+	<a href="StudentAttendanceHistory.php">Attendance History</a>
+	<a href="StudentTimetable.php">Timetable</a> 	
+	<a href="StudentEC.php">Student EC</a> 
 	<a href="logout.php">Log Out</a>
 </nav>
 
@@ -73,98 +78,35 @@ body
 – Christian D. Larson<p></center>
 <main>
 <table>
-<tbody>
-<tr>
-<td style="text-align: center;" width="150">
-<p>Day</p>
-</td>
-<td style="text-align: center;" width="180">
-<p>Date</p>
-</td>
-<td style="text-align: center;" width="200">
-<p>Module</p>
-</td>
-<td style="text-align: center;" width="200">
-<p>Time</p>
-</td>
-</tr>
-<tr>
-<td style="text-align: center;" width="150">
-<p>Monday</p>
-</td>
-<td style="text-align: center;" width="180">
-<p>11 January 2021</p>
-</td>
-<td style="text-align: center;" width="200">
-<p>Information systems</p>
-<p>Web Development</p>
-</td>
-<td style="text-align: center;" width="200">
-<p>8.30am-10.30am</p>
-<p>12.30pm-2.30pm</p>
-</td>
-</tr>
-<tr>
-<td style="text-align: center;" width="150">
-<p>Tuesday</p>
-</td>
-<td style="text-align: center;" width="180">
-<p>12 January 2021</p>
-</td>
-<td style="text-align: center;" width="200">
-<p>Java Programming</p>
-<p>Information System</p>
-</td>
-<td style="text-align: center;" width="200">
-<p>8.30am-10.30am</p>
-<p>2.45pm-4.45pm</p>
-</td>
-</tr>
-<tr>
-<td style="text-align: center;" width="150">
-<p>Wednesday</p>
-</td>
-<td style="text-align: center;" width="180">
-<p>13 January 2021</p>
-</td>
-<td style="text-align: center;" width="200">
-<p>Operating System</p>
-<p>Web Development</p>
-</td>
-<td style="text-align: center;" width="200">
-<p>8.30am-10.30am</p>
-<p>2.00pm-4.00pm</p>
-</td>
-</tr>
-<tr>
-<td style="text-align: center;" width="150">
-<p>Thursday</p>
-</td>
-<td style="text-align: center;" width="180">
-<p>14 January 2021</p>
-</td>
-<td style="text-align: center;" width="200">
-<p>Java Programming</p>
-</td>
-<td style="text-align: center;" width="200">
-<p>2.45pm-4.45pm</p>
-</td>
-</tr>
-<tr>
-<td style="text-align: center;" width="150">
-<p>Friday</p>
-</td>
-<td style="text-align: center;" width="180">
-<p>15 January 2021</p>
-</td>
-<td style="text-align: center;" width="200">
-<p>Numerical Methods</p>
-</td>
-<td style="text-align: center;" width="200">
-<p>8.30am-10.30am</p>
-</td>
-</tr>
-</tbody>
+	<body>
+	<table>
+	<tr>
+		<th>time id</th>
+		<th>Date</th>
+		<th>Time</th>
+		<th>Module Id</th>
+		<th>Module Group</th>
+		<th>Lecturer Id</th>
+		<th>Code</th>
+	</tr>
+	<?php
+	$link = mysqli_connect('localhost','root','','sdp assignment','3306');
+	$sql = "SELECT * FROM timetable";
+	$result = $link-> query($sql);
+	
+	if($result->num_rows > 0) {
+		while ($row = $result-> fetch_assoc()){
+			echo "<tr><td>" . $row["time_id"] . "</td><td>" . $row["time_date"] . "</td><td>" . $row["time_time"] . "</td><td>" . $row["module_id"] . "</td><td>" . $row["module_group"] . "</td><td>" . $row["lect_id"] . "</td><td>" . $row["time_code"] . "</td></tr>";
+		}
+	}
+	else{
+		echo "No Results";
+	}
+	$link-> close();
+	?>
+	</table>
+	</body>
+	
 </table>
 
 </main>
