@@ -17,29 +17,6 @@
 				<div class="row">
 					<form action="" class="col-md-6 mr-auto">
 						<div class="input-group mb-3">
-							
-								<button class="btn btn-light dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">All</button>
-								<div class="dropdown-menu">
-								<?php
-									echo '<a class="dropdown-item disabled"><center>Day</center></a>';
-									echo '<div role="separator" class="dropdown-divider"></div>';
-									$today = strtotime('today 00:00:00');
-									$monday = strtotime('monday this week');
-									$tuesday = strtotime('tuesday this week');
-									$wednesday = strtotime('wednesday this week');
-									$thursday = strtotime('thursday this week');
-									$friday = strtotime('friday this week');
-									echo '<a href="Timetable.php" class="dropdown-item">'.date('M j', $today) . ' - Today</a>';
-									echo '<div role="separator" class="dropdown-divider"></div>';
-									echo '<a href="Timetable.php" class="dropdown-item">'.date('M j', $monday) . ' - Monday</a>';
-									echo '<a href="Timetable.php" class="dropdown-item">'.date('M j', $tuesday) . ' - Tuesday</a>';
-									echo '<a href="Timetable.php" class="dropdown-item">'.date('M j', $wednesday) . ' - Wednesday</a>';
-									echo '<a href="Timetable.php" class="dropdown-item">'.date('M j', $thursday) . ' - Thursday</a>';
-									echo '<a href="Timetable.php" class="dropdown-item">'.date('M j', $friday) . ' - Friday</a>';
-								?>
-								  
-								</div>
-							
 							<input type="text" class="form-control" aria-label="Search input with dropdown button">
 							<div class="input-group-append">
 								<button class="btn btn-success" type="button">Search</button>
