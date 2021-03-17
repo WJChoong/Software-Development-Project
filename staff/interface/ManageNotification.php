@@ -60,7 +60,7 @@ session_start();
 						<tr>
 							<th>ID</th>
 							<th>Title</th>
-							<th>Staff Name</th>
+							<th>Staff ID</th>
 							<th>Action</th>
 						</tr>
 					</thead>
