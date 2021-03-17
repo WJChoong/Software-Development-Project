@@ -11,8 +11,12 @@ session_start();
 		require "../../conn.php";
 		require "../design/staff-navbar.php";
 	?>
-	<body style="background-color: rgba(0,0,0,0.1);">
+	<body>
 		<div class="row bg-light">
+			<?php
+			require "../../conn.php";
+			$sql = SELECT * FROM course
+			?>
 			<?php require "../design/navtab-managestudent.php"?>
 			<div class="col-md-9">
 				<div class="container bg-light card body">
@@ -22,31 +26,25 @@ session_start();
 						<div class="form-group row">
 							<label class="col-3 col-form-label">Name</label> 
 							<div class="col-8">
-							  <input placeholder="Name" class="form-control here" required="required" type="text">
+							  <input placeholder="Name" class="form-control here" required="required" type="text" name="name">
 							</div>
 						</div>
 						<div class="form-group row">
-							<label class="col-3 col-form-label">Student ID</label> 
-							<div class="col-8">
-						    	<input placeholder="Eg: TP012345" class="form-control here" type="text">
-							</div>
-					  	</div>
-						<div class="form-group row">
 							<label class="col-3 col-form-label">Date of Birth</label> 
 							<div class="col-8">
-								<input placeholder="dd/mm/yyyy" class="form-control here" type="text">
+								<input placeholder="dd/mm/yyyy" class="form-control here" type="date" name="dob">
 							</div>
 						</div>
 					    <div class="form-group row">
 					    <label class="col-3 col-form-label">Phone Number</label> 
 							<div class="col-8">
-								<input placeholder="Phone Number" class="form-control here" required="required" type="text">
+								<input placeholder="Phone Number" class="form-control here" required="required" type="text" name="phone">
 							</div>
 					    </div>
 						<div class="form-group row">
 							<label class="col-3 col-form-label">Gender</label> 
 							<div class="col-8">
-								<select class="custom-select">
+								<select class="custom-select" name="gender">
 									<option value="#">--Gender--</option>
 									<option value="male">Male</option>
 									<option value="female">Female</option>
@@ -56,41 +54,64 @@ session_start();
 					    <div class="form-group row">
 							<label class="col-3 col-form-label">Email</label> 
 							<div class="col-8">
-								<input placeholder="Email" class="form-control here" required="required" type="text">
+								<input placeholder="Email" class="form-control here" required="required" type="text" name="email">
 							</div>
 					    </div>
 					    <div class="form-group row">
-							<label class="col-3 col-form-label">Address</label> 
+							<label class="col-3 col-form-label">Street</label> 
 							<div class="col-8">
-								<input placeholder="Address" class="form-control here" type="text">
+								<input placeholder="Street" class="form-control here" type="text" name="street">
 							</div>
 					    </div>
+						<div class="form-group row">
+							<label class="col-3 col-form-label">State</label> 
+							<div class="col-8">
+								<input placeholder="State" class="form-control here" type="text" name="state">
+							</div>
+					    </div>
+						<div class="form-group row">
+							<label class="col-3 col-form-label">City</label> 
+							<div class="col-8">
+								<input placeholder="City" class="form-control here" type="text" name="city">
+							</div>
+					    </div>
+						<div class="form-group row">
+							<label class="col-3 col-form-label">Postcode</label> 
+							<div class="col-8">
+								<input placeholder="Postcode" class="form-control here" type="text" name="postcode">
+							</div>
+					    </div>
+						<div class="form-group row">
+							<label class="col-3 col-form-label">Country</label> 
+							<div class="col-8">
+								<input placeholder="Country" class="form-control here" type="text" name="country">
+							</div>
+						</div>
 					    <div class="form-group row">
 							<label class="col-3 col-form-label">Course</label> 
 							<div class="col-8">
-								<select id="select" name="select" class="custom-select">
+								<select id="select" name="select" class="custom-select" name="course">
 									<option value="#">--Course Name--</option>
-									<option value="#">Male</option>
-									<option value="#">Female</option>
+									
 								</select>
 							</div>
 					    </div>
 					    <div class="form-group row">
 							<label class="col-3 col-form-label">Password</label> 
 							<div class="col-8">
-								<input placeholder="Password" class="form-control here" type="text">
+								<input placeholder="Password" class="form-control here" type="text" name="password">
 							</div>
 					    </div>
 						<div class="form-group row">
 							<label class="col-3 col-form-label">Confirm Password</label> 
 							<div class="col-8">
-								<input placeholder="Confirm Password" class="form-control here" type="text">
+								<input placeholder="Confirm Password" class="form-control here" type="text" name="password2">
 							</div>
 					    </div> 
 						<div class="form-group row">
-							<label class="col-3 col-form-label">Upload Your Photo</label> 
+							<label class="col-3 col-form-label">Upload Photo</label> 
 							<div class="col-8">
-								<input type="file" class="custom-file-input" id="customFile">
+								<input type="file" class="custom-file-input" id="customFile" name="photo">
 								<label class="custom-file-label ml-3">Choose file</label>
 							</div>
 					    </div> 

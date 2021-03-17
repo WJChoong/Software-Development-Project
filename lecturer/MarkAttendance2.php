@@ -16,6 +16,7 @@
 				<div class="container bg-light card body">
 					<h3 class="row justify-content-center font-weight-bold">Mark Attendance</h3>
 					<br><br>
+					<form method="post" action="action/updateattendance.php">
 					<table class="table">
 					<thead>
 						<tr>
@@ -52,10 +53,20 @@ $result = mysqli_query($link, $sql);
 		$row  = mysqli_fetch_assoc($result);
 
 		echo '<tr>';
-		echo '<td>'.$row['student_id'].'</td>';				
+		echo '<td name="student_id">'.$row['student_id'].'</td>';				
 		echo '<td>'.$row['student_name'].'</td>';
 		echo '<td>'.$row['course_name'].'</td>';
-		echo '<td><a href = "#" class="btn btn-sm btn-success">Present</a> <a href = "#" class="btn btn-sm btn-success">Absence</a><br>
-		     </td>';
+		echo '<td> <label><input type="radio" name="status[<?php echo '.$row['student_id'].'"  value="present">Present</label>  &emsp;
+					<label><input type="radio" name="status[<?php echo '.$row['student_id'].'"  value="absent">Absent</label><br>
+		     </td></form>';
 		}
 		}
+?>
+	</tbody>
+	</table>
+
+		<div class="form-group row">
+			<div class="offset-4 col-8">
+			<button name="submit" type="submit" class="btn btn-primary">Update Attendance >>></button>
+			</div>
+	    </div>
