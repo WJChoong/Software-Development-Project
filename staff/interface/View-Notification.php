@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!doctype html>
 <html lang="en">
     <head>
@@ -11,49 +14,30 @@
             <div class="col-md-9">
 			<div class="col-md-9">
 				<div class="container bg-light card body">
-					<h3 class="row justify-content-center font-weight-bold">Edit Information</h3>
-					<br>
+					<h3 class="row justify-content-center font-weight-bold">Notification Details</h3>
+					<br><?php require "../action/view-notification.php";?>
 					<form action="" method="post">
 						<div class="form-group row">
-							<label class="col-3 col-form-label">Title</label> 
+							<label class="col-3 col-form-label">Notification Title</label> 
 							<div class="col-8">
-							  <input class="form-control here" required="required" type="text" disabled="true" value="me">
+								<input placeholder="<?php echo $notiTitle;?>" class="form-control here" type="text" disabled>
 							</div>
 						</div>
 						<div class="form-group row">
-							<label class="col-3 col-form-label">Date</label> 
+							<label class="col-3 col-form-label">Staff Name</label> 
 							<div class="col-8">
-						    	<input class="form-control here" type="text" disabled="true" value="me">
+								<input placeholder="<?php echo $staffName;?>" class="form-control here" type="text" disabled>  
+							</div>
+						</div>
+						<div class="form-group row">
+							<label class="col-3 col-form-label">Notification content</label> 
+							<div class="col-8">
+						    	<textarea class="form-control here" rows="8" cols="50" name="content" disabled><?php echo $content;?></textarea>
 							</div>
 					  	</div>
-						<div class="form-group row">
-							<label class="col-3 col-form-label">Time</label> 
-							<div class="col-8">
-								<input class="form-control here" type="text" disabled="true" value="me">
-							</div>
-						</div>
-					    <div class="form-group row">
-					    <label class="col-3 col-form-label">Staff Name</label> 
-							<div class="col-8">
-								<input class="form-control here" required="required" type="text" disabled="true" value="me">
-							</div>
-					    </div>
-					    <div class="form-group row">
-							<label class="col-3 col-form-label">Email</label> 
-							<div class="col-8">
-								<input class="form-control here" required="required" type="text" disabled="true" value="me">
-							</div>
-					    </div>
-					    <div class="form-group row">
-							<label class="col-3 col-form-label">Content</label> 
-							<div class="col-8">
-								<textarea class="form-control here" rows="10" cols="50" disabled="true">value</textarea>
-							</div>
-					    </div>
 					    <div class="form-group row">
 							<div class="offset-4 col-8">
-								<button name="Edit" type="submit" class="btn btn-primary">Edit</button>
-								<button name="Delete" type="submit" class="btn btn-primary">Delete</button>
+								<a class="btn btn-primary" href="ManageNotification.php">Done</a>
 							</div>
 					    </div>
 					</form>

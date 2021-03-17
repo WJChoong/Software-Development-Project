@@ -10,16 +10,15 @@ session_start();
 
 	<?php 
 		require "../design/staff-navbar.php";
-		$_SESSION["staff_id"] = "ST000002";
 	?>
-	<body style="background-color: rgba(0,0,0,0.1);">
+	<body>
 		<div class="row bg-light">
 			<div class="container vh-130 bg-light card body">
 				<?php
 					require "../action/profile.php";
 				?>
 				<picture style="margin: 10px;">
-					<img src="s<?= $_SESSION['staff_pic'];?>"  class="img-fluid img-thumbnail rounded mx-auto d-block" alt="">
+					<?php echo "<img src='data:image;base64,".base64_encode($_SESSION['staff_pic'])."' height='300' width='200'  class='img-fluid img-thumbnail rounded mx-auto d-block' alt='' >";?>
 				</picture>
 				<br>
 				<h5 class="row justify-content-center font-weight-bold">Staff ID</h5>

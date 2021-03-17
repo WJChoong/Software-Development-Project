@@ -8,14 +8,14 @@ session_start();
 	</head>
 
 		<?php require "../design/staff-navbar.php"?>
-	<body style="background-color: rgba(0,0,0,0.1);">
+	<body>
 		<div class="row bg-light">
 			<?php require "../design/navtab-addlecturer.php"?>
 			<div class="col-md-9">
 				<div class="container bg-light card body">
 					<h3 class="row justify-content-center font-weight-bold">Create Information</h3>
 					<br>
-					<form action="" method="post">
+					<form action="../action/create-lect.php" method="post">
 						<div class="form-group row">
 							<label class="col-3 col-form-label">Name</label> 
 							<div class="col-8">
@@ -37,7 +37,7 @@ session_start();
 						<div class="form-group row">
 							<label class="col-3 col-form-label">Gender</label> 
 							<div class="col-8">
-								<select class="custom-select" name="Gender">
+								<select class="custom-select" name="gender">
 									<option value="">--Gender--</option>
 									<option value="M">Male</option>
 									<option value="F">Female</option>
@@ -75,25 +75,15 @@ session_start();
 							</div>
 					    </div>
 					    <div class="form-group row">
-							<label class="col-3 col-form-label">Course</label> 
-							<div class="col-8">
-								<select id="select" name="select" class="custom-select">
-									<option value="#">--Course Name--</option>
-									<option value="#">Male</option>
-									<option value="#">Female</option>
-								</select>
-							</div>
-					    </div>
-					    <div class="form-group row">
 							<label class="col-3 col-form-label">Password</label> 
 							<div class="col-8">
-								<input placeholder="Password" class="form-control here" name="pass" type="password">
+								<input placeholder="Password" class="form-control here" name="password" type="password">
 							</div>
 					    </div>
 						<div class="form-group row">
 							<label class="col-3 col-form-label">Confirm Password</label> 
 							<div class="col-8">
-								<input placeholder="Confirm Password" class="form-control here" name="pass2" type="password">
+								<input placeholder="Confirm Password" class="form-control here" name="password2" type="password">
 							</div>
 					    </div> 
 						<div class="form-group row">

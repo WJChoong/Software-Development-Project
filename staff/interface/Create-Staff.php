@@ -8,7 +8,7 @@
 		require "../../conn.php";
 		require "../design/staff-navbar.php";
 	?>
-	<body style="background-color: rgba(0,0,0,0.1);">
+	<body>
 		<div class="row bg-light">
 			<?php require "../design/navtab-addstaff.php"?>
 			<div class="col-md-9">

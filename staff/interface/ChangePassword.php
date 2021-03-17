@@ -9,7 +9,7 @@ session_start();
     <br>
     <br>
     <br>
-	<body style="background-color: rgba(0,0,0,0.1);">
+	<body>
 		<div class="container col-md-5 card body bg-light">
             <h3 class="row justify-content-center font-weight-bold">Change Password</h3>
             <form class="justify-content-center" action="" method="post">

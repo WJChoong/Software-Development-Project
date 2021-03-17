@@ -22,9 +22,9 @@ if (isset($_POST["submit"])){
     //check whether passowrd are same
     if ($pass === $pass2){
         //get the last staff id
-        $sql1 = "SELECT staff_id 
-                 FROM staff 
-                 ORDER BY staff_id 
+        $sql1 = "SELECT lect_id 
+                 FROM  lecturer
+                 ORDER BY lect_id 
                  DESC LIMIT 1;";
 		$results = mysqli_query($link,$sql1); //return whether there is a result
 
@@ -32,36 +32,33 @@ if (isset($_POST["submit"])){
 
             //increment staff id by one
             $row = mysqli_fetch_assoc($results);
-            $num = explode("ST", $row['staff_id']);
+            $num = explode("LT", $row['lect_id']);
             $count = strlen($num[1]);
             $num = intval($num[1]);
             $num++;
             $id = "ST";
-			while (strlen($id) != 8) {
+			while (strlen($id) != 5) {
 				$id .= "0";
-				if (strlen($id) + strlen($num) == 8) {
+				if (strlen($id) + strlen($num) == 5) {
 					$id .= $num;
 				}
 			}
 
-            //hash the password
-            $pass = password_hash($pass, PASSWORD_DEFAULT); 
-
-            $sql2 = "INSERT INTO staff (
-                                        staff_id,
-                                        staff_name, 
-                                        staff_DOB,
-                                        staff_num, 
-                                        staff_gender, 
-                                        staff_email, 
-                                        staff_street, 
-                                        staff_postcode,
-                                        staff_city,
-                                        staff_state,
-                                        staff_country,
-                                        staff_password,
-                                        staff_pic
-                                        )
+            $sql2 = "INSERT INTO lecturer(
+                                           lect_id,
+                                           lect_name, 
+                                           lect_DOB,
+                                           lect_num, 
+                                           lect_gender, 
+                                           lect_email, 
+                                           lect_street, 
+                                           lect_postcode,
+                                           lect_city,
+                                           lect_state,
+                                           lect_country,
+                                           lect_password,
+                                           lect_pic
+                                           )
                     VALUES (
                             '$id',
                             '$name',
@@ -80,21 +77,21 @@ if (isset($_POST["submit"])){
             
             //check whether the profile is successfully created
             if ($link->query($sql2) === TRUE) {
-                header("Location: ../interface/Create-Staff.php?status=Success");
+                header("Location: ../interface/Create-Lecturer.php?status=success");
             } else {
-                header("Location: ..inteface/Create-Staff.php?status=Failed");
+                header("Location: ..inteface/Create-Lecturer.php?status=failed");
             }
         }
         else {
-            header("Location: ..inteface/Create-Staff.php?status=NoUser");
+            header("Location: ..inteface/Create-Lecturer.php?status=nouser");
         }
     }
     else{
-        header("Location: ../interface/Create-Staff.php?error=unmatchpassword");
+        header("Location: ../interface/Create-Lecturer.php?error=unmatchpassword");
     }
 } 
 else {
-    header("Location: ../interface/Create-Staff.php");
+    header("Location: ../interface/Create-Lecturer.php");
     exit();
 }
 ?>

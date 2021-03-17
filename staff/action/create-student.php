@@ -15,6 +15,7 @@ if (isset($_POST["submit"])){
     $city = $_POST["city"];
     $state = $_POST["state"];
     $country = $_POST["country"];
+    $course = $_POST["course"];
     $pass = $_POST["password"];
     $pass2 = $_POST["password2"];
     $photo = $_POST["photo"];
@@ -22,9 +23,9 @@ if (isset($_POST["submit"])){
     //check whether passowrd are same
     if ($pass === $pass2){
         //get the last staff id
-        $sql1 = "SELECT staff_id 
-                 FROM staff 
-                 ORDER BY staff_id 
+        $sql1 = "SELECT student_id 
+                 FROM student 
+                 ORDER BY student_id 
                  DESC LIMIT 1;";
 		$results = mysqli_query($link,$sql1); //return whether there is a result
 
@@ -32,69 +33,68 @@ if (isset($_POST["submit"])){
 
             //increment staff id by one
             $row = mysqli_fetch_assoc($results);
-            $num = explode("ST", $row['staff_id']);
+            $num = explode("S", $row['student_id']);
             $count = strlen($num[1]);
             $num = intval($num[1]);
             $num++;
-            $id = "ST";
-			while (strlen($id) != 8) {
+            $id = "S";
+			while (strlen($id) != 5) {
 				$id .= "0";
-				if (strlen($id) + strlen($num) == 8) {
+				if (strlen($id) + strlen($num) == 5) {
 					$id .= $num;
 				}
 			}
 
-            //hash the password
-            $pass = password_hash($pass, PASSWORD_DEFAULT); 
-
             $sql2 = "INSERT INTO staff (
-                                        staff_id,
-                                        staff_name, 
-                                        staff_DOB,
-                                        staff_num, 
-                                        staff_gender, 
-                                        staff_email, 
-                                        staff_street, 
-                                        staff_postcode,
-                                        staff_city,
-                                        staff_state,
-                                        staff_country,
-                                        staff_password,
-                                        staff_pic
+                                        student_id,
+                                        student_name, 
+                                        student_DOB,
+                                        student_num, 
+                                        student_email,
+                                        student_street,
+                                        student_city, 
+                                        student_postcode,
+                                        student_country,
+                                        course_id,
+                                        student_photo,
+                                        student_password,
+                                        student_gender, 
+                                        student_state
                                         )
                     VALUES (
                             '$id',
                             '$name',
                             '$date',
-                            '$phone',
-                            '$gender',
+                            '$phone',     
                             '$email',
                             '$street',
-                            '$postcode',
                             '$city',
-                            '$state',
+                            '$postcode',
                             '$country',
+                            '$course',
+                            '$photo',
                             '$pass',
-                            '$photo'
+                            '$gender',
+                            '$state'
                         );";
             
             //check whether the profile is successfully created
             if ($link->query($sql2) === TRUE) {
-                header("Location: ../interface/Create-Staff.php?status=Success");
+                header("Location: ../interface/ManageStudent.php?status=Success");
             } else {
-                header("Location: ..inteface/Create-Staff.php?status=Failed");
+                header("Location: ..inteface/ManageStudent.php?status=Failed");
             }
         }
         else {
-            header("Location: ..inteface/Create-Staff.php?status=NoUser");
+            header("Location: ..inteface/ManageStudent.php?status=NoUser");
         }
     }
     else{
-        header("Location: ../interface/Create-Staff.php?error=unmatchpassword");
+        header("Location: ../interface/ManageStudent.php?error=unmatchpassword");
     }
 } 
 else {
-    header("Location: ../interface/Create-Staff.php");
+    header("Location: ../interface/ManageStudent.php");
     exit();
 }
 ?>
