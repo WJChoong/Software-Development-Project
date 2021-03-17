@@ -7,6 +7,13 @@
 		if(!isset($_SESSION['lect_id'])){
 		die(header("location: ../Main Page/login.php"));
 	}
+	//Step1:Get the information from the form & $_POST[''] is refer to your input object name
+	$moduleid = $_POST['module_name'];
+	$modulegroup = $_POST['module_group'];
+	$date = $_POST['date'];
+	$start = $_POST['start_time'];
+	$duration = $_POST['duration'];
+	$classtype = $_POST['class_type'];
 	?>
 	<?php require "design/lec-navbar.php"?>
 	<body style="background-color: rgba(0,0,0,0.1);">
@@ -14,9 +21,14 @@
 			<?php require "design/lecnavtab-profile.php"?>
 				<div class="col-md-9">
 				<div class="container bg-light card body">
-					<h3 class="row justify-content-center font-weight-bold">Mark Attendance</h3>
-					<br><br>
 					<form method="post" action="action/updateattendance.php">
+					<h3 class="row justify-content-center font-weight-bold">Mark Attendance</h3><br>
+					<h4 class="row justify-content-center font-weight-bold"><?php echo $moduleid . ' ' . $modulegroup?></h4>
+					<input type="hidden" name="module_id" value="<?php  echo $_POST['module_name']; ?>"> <!-- To import 1st page data to 3 page -->
+					<h4 class="row justify-content-center font-weight-bold"><?php echo $date?></h4>
+					<input type="hidden" name="date" value="<?php  echo $_POST['date']; ?>"> <!-- To import 1st page data to 3 page -->
+					
+					<br>
 					<table class="table">
 					<thead>
 						<tr>
@@ -29,13 +41,7 @@
 					<tbody>
 
 <?php
-//Step1:Get the information from the form & $_POST[''] is refer to your input object name
-$moduleid = $_POST['module_name'];
-$modulegroup = $_POST['module_group'];
-$date = $_POST['date'];
-$start = $_POST['start_time'];
-$duration = $_POST['duration'];
-$classtype = $_POST['class_type'];
+
 //step 2: do connection to the database
 include "../conn.php"; //link the conn.php info to here
 //step 3: select and compare user from database whether user exist or not(since this is select)
@@ -51,14 +57,19 @@ $result = mysqli_query($link, $sql);
 		if(mysqli_affected_rows($link)>0){
 		for ($i = 0; $i < mysqli_num_rows($result); $i++){
 		$row  = mysqli_fetch_assoc($result);
+		$id =  $row['student_id'];
 
 		echo '<tr>';
-		echo '<td name="student_id">'.$row['student_id'].'</td>';				
+		echo '<td><input type="hidden" name="student_id[]" value="'.$row['student_id'].'">'.$row['student_id'].'</td>';				
 		echo '<td>'.$row['student_name'].'</td>';
 		echo '<td>'.$row['course_name'].'</td>';
-		echo '<td> <label><input type="radio" name="status[<?php echo '.$row['student_id'].'"  value="present">Present</label>  &emsp;
-					<label><input type="radio" name="status[<?php echo '.$row['student_id'].'"  value="absent">Absent</label><br>
-		     </td></form>';
+		echo "<td>";
+		echo "<select name=attendance_status[] id=attendance_status>";
+		echo "<option value=0>Absent</option>";
+		echo "<option value=1>Present</option>";
+		echo "</select>";
+		echo "</td>";
+		echo "</tr>"; 
 		}
 		}
 ?>
@@ -69,4 +80,5 @@ $result = mysqli_query($link, $sql);
 			<div class="offset-4 col-8">
 			<button name="submit" type="submit" class="btn btn-primary">Update Attendance >>></button>
 			</div>
+			</form>
 	    </div>

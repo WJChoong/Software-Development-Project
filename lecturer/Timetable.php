@@ -47,7 +47,7 @@
 								FROM timetable T JOIN module M
 								WHERE T.module_id = M.module_id 
 								AND T.time_date = '$date1'
-								AND T.lect_id = '".$_SESSION['lect_id']."'
+								AND M.lect_id = '".$_SESSION['lect_id']."'
 								GROUP BY T.time_id";
 						$result = mysqli_query($link, $sql);
 						//Step 3 - Process result

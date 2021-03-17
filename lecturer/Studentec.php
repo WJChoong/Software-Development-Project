@@ -46,7 +46,6 @@
 							<th>Course Name</th>
 							<th>Upload Date</th>
 							<th>EC Reason</th>
-							<th>EC Photo</th>
 							<th>Status</th>
 						</tr>
 					</thead>
@@ -75,8 +74,6 @@
 					echo '<td>'.$row['course_name'].'</td>';
 					echo '<td>'.$row['EC_date'].'</td>';					
 					echo '<td>'.$row['EC_reason'].'</td>';
-				    echo '<td><img src="'.$row['EC_photo'].'"width = 100 height = 100 alt = 
-					"Image not available"/></td>';	
 					echo '<td><a href = "action/acceptec.php?EC_id='.$row['EC_id'].'" class="btn btn-sm btn-success">Accepted</a> 
 							<a href = "action/rejectec.php?EC_id='.$row['EC_id'].'" class="btn btn-sm btn-success">Rejected</a></td>';
 				}
