@@ -76,7 +76,7 @@ body
 
 <nav>
 	<a href="LoginPage">Home page</a>
-	<a href="Account.php">Account</a>
+	<a href="StudentProfile.php">Account</a>
 	<a href="StudentAttendanceHistory.php">Attendance History</a>
 	<a href="StudentTimetable.php">Timetable</a> 	
 	<a href="StudentEC.php">Student EC</a> 
@@ -88,8 +88,8 @@ body
 <main>
 
 <form action="/action_page.php">
-	<label for="attend_id">Attendance ID: </label>
-	<input type="attend_id"><br><br>
+	<label for="EC_id">EC ID: </label>
+	<input type="EC_id"><br><br>
 	<label for="student_id">Student ID: </label>
 	<input type="student_id"><br><br>
 	<label for="EC_reason">EC Reason: </label>
@@ -98,8 +98,7 @@ body
 	<input type="EC_date"><br><br>
 	<label for="lect_id">Lecturer ID: </label>
 	<input type="lect_id"><br><br>
-	<label for="myfile">Add your file here:  </label>
-	<input type="file" id="myfile" name="myfile"><br><br>
+
 </form>
 	
 </main>
@@ -108,5 +107,4 @@ body
 
 <center><input type="submit" value="Submit" class="btn"><center><br><br>	
 
-	<label for="EC_Status">EC Status: </label>
 </html>

@@ -65,7 +65,7 @@ th
 
 <nav>
 	<a href="LoginPage">Home page</a>
-	<a href="Account.php">Account</a>
+	<a href="StudentProfile.php">Account</a>
 	<a href="StudentAttendanceHistory.php">Attendance History</a>
 	<a href="StudentTimetable.php">Timetable</a> 	
 	<a href="StudentEC.php">Student EC</a> 
@@ -84,10 +84,9 @@ th
 		<th>time id</th>
 		<th>Date</th>
 		<th>Time</th>
+		<th>Time Group</th>
 		<th>Module Id</th>
-		<th>Module Group</th>
 		<th>Lecturer Id</th>
-		<th>Code</th>
 	</tr>
 	<?php
 	$link = mysqli_connect('localhost','root','','sdp assignment','3306');
@@ -96,7 +95,7 @@ th
 	
 	if($result->num_rows > 0) {
 		while ($row = $result-> fetch_assoc()){
-			echo "<tr><td>" . $row["time_id"] . "</td><td>" . $row["time_date"] . "</td><td>" . $row["time_time"] . "</td><td>" . $row["module_id"] . "</td><td>" . $row["module_group"] . "</td><td>" . $row["lect_id"] . "</td><td>" . $row["time_code"] . "</td></tr>";
+			echo "<tr><td>" . $row["time_id"] . "</td><td>" . $row["time_date"] . "</td><td>" . $row["time_time"] . "</td><td>" . $row["time_group"] . "</td><td>" . $row["module_id"] . "</td><td>" . $row["lect_id"] . "</td></tr>";
 		}
 	}
 	else{

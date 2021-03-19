@@ -93,7 +93,7 @@ function percentage(partialValue, totalValue) {
 
 <nav>
 	<a href="LoginPage">Home page</a>
-	<a href="Account.php">Account</a>
+	<a href="StudentProfile.php">Account</a>
 	<a href="StudentAttendanceHistory.php">Attendance History</a>
 	<a href="StudentTimetable.php">Timetable</a> 	
 	<a href="StudentEC.php">Student EC</a> 
@@ -103,129 +103,6 @@ function percentage(partialValue, totalValue) {
 <Main>
 
 <h1>Attendance History</h1>
-<p>“Attend today, and achieve tomorrow” and “80% of success is showing up!”</p>
-	<div class="left">
-		<input type="submit" value="Attendance" class="btn">	
-	</div>
-
-
-<h2>Semester 1</h2>
-<table>
-	<tr>
-		<th>Attend ID</th>
-		<th>Overall Class</th>
-		<th>Present Class</th>
-	</tr>
-<?php
-$link = mysqli_connect('localhost','root','','sdp assignment','3306');
-foreach($link->query('SELECT attend_status,attend_id,COUNT(*)
-FROM attendancestudent WHERE attend_status="Present" and attend_id="AT88" GROUP BY attend_id;') as $column)	
-foreach($link->query('SELECT attend_status,attend_id,COUNT(*)
-FROM attendancestudent WHERE attend_status="Present" and "Absent" or attend_id="AT88" GROUP BY attend_id;') as $row) {
-echo "<tr>";
-echo "<td>" . $row['attend_id'] . "</td>";
-echo "<td>" . $row['COUNT(*)'] . "</td>";
-echo "<td>" . $column['COUNT(*)'] . "</td>";
-echo "</tr>";
-}
-?>
-
-</table>
-<br>
-
-
-<h2>Semester 2</h2>
-<table>
-	<tr>
-		<th>Attend ID</th>
-		<th>Overall Class</th>
-		<th>Present Class</th>
-	</tr>
-<?php
-$link = mysqli_connect('localhost','root','','sdp assignment','3306');
-foreach($link->query('SELECT attend_status,attend_id,COUNT(*)
-FROM attendancestudent WHERE attend_status="Present" and attend_id="AT99" GROUP BY attend_id;') as $column)	
-foreach($link->query('SELECT attend_status,attend_id,COUNT(*)
-FROM attendancestudent WHERE attend_status="Present" and "Absent" or attend_id="AT99" GROUP BY attend_id;') as $row) {
-echo "<tr>";
-echo "<td>" . $row['attend_id'] . "</td>";
-echo "<td>" . $row['COUNT(*)'] . "</td>";
-echo "<td>" . $column['COUNT(*)'] . "</td>";
-echo "</tr>";
-}
-?>
-</table>
-
-<h2>Semester 3</h2>
-<table>
-	<tr>
-		<th>Attend ID</th>
-		<th>Overall Class</th>
-		<th>Present Class</th>
-	</tr>
-<?php
-$link = mysqli_connect('localhost','root','','sdp assignment','3306');
-foreach($link->query('SELECT attend_status,attend_id,COUNT(*)
-FROM attendancestudent WHERE attend_status="Present" and attend_id="AT77" GROUP BY attend_id;') as $column)	
-foreach($link->query('SELECT attend_status,attend_id,COUNT(*)
-FROM attendancestudent WHERE attend_status="Present" and "Absent" or attend_id="AT77" GROUP BY attend_id;') as $row) {
-echo "<tr>";
-echo "<td>" . $row['attend_id'] . "</td>";
-echo "<td>" . $row['COUNT(*)'] . "</td>";
-echo "<td>" . $column['COUNT(*)'] . "</td>";
-echo "</tr>";
-}
-?>
-</table>
-
-
-<h2>Semester 4</h2>
-<table>
-	<tr>
-		<th>Attend ID</th>
-		<th>Overall Class</th>
-		<th>Present Class</th>
-	</tr>
-<?php
-$link = mysqli_connect('localhost','root','','sdp assignment','3306');
-foreach($link->query('SELECT attend_status,attend_id,COUNT(*)
-FROM attendancestudent WHERE attend_status="Present" and attend_id="AT66" GROUP BY attend_id;') as $column)	
-foreach($link->query('SELECT attend_status,attend_id,COUNT(*)
-FROM attendancestudent WHERE attend_status="Present" and "Absent" or attend_id="AT66" GROUP BY attend_id;') as $row) {
-echo "<tr>";
-echo "<td>" . $row['attend_id'] . "</td>";
-echo "<td>" . $row['COUNT(*)'] . "</td>";
-echo "<td>" . $column['COUNT(*)'] . "</td>";
-echo "</tr>";
-}
-?>
-</table>
-
-<h2>Semester 5</h2>
-<table>
-	<tr>
-		<th>Attend ID</th>
-		<th>Overall Class</th>
-		<th>Present Class</th>
-	</tr>
-<?php
-$link = mysqli_connect('localhost','root','','sdp assignment','3306');
-foreach($link->query('SELECT attend_status,attend_id,COUNT(*)
-FROM attendancestudent WHERE attend_status="Present" and attend_id="AT55" GROUP BY attend_id;') as $column)	
-foreach($link->query('SELECT attend_status,attend_id,COUNT(*)
-FROM attendancestudent WHERE attend_status="Present" and "Absent" or attend_id="AT55" GROUP BY attend_id;') as $row) {
-echo "<tr>";
-echo "<td>" . $row['attend_id'] . "</td>";
-echo "<td>" . $row['COUNT(*)'] . "</td>";
-echo "<td>" . $column['COUNT(*)'] . "</td>";
-echo "</tr>";
-}
-?>
-</table>
-
-<br><br>
-
-<h1>Overall Attendance</h1>
 <p>“Believe in yourself and all that you are. Know that there is something inside you that is greater than any obstacle.”<br>
 – Christian D. Larson</p>
 	<table>
@@ -234,17 +111,17 @@ echo "</tr>";
 		<th>Attend Status</th>
 		<th>Lecturer Id</th>
 		<th>Student Id</th>
-		<th>Time Id</th>
-		<th>Semester</th>
+		<th>Attend Module</th>
+		<th>Attend Date</th>
 	</tr>
 	<?php
 	$link = mysqli_connect('localhost','root','','sdp assignment','3306');
-	$sql = "SELECT * FROM attendancestudent";
+	$sql = "SELECT * FROM attendance";
 	$result = $link-> query($sql);
 	
 	if($result->num_rows > 0) {
 		while ($row = $result-> fetch_assoc()){
-			echo "<tr><td>" . $row["attend_id"] . "</td><td>" . $row["attend_status"] . "</td><td>" . $row["lect_id"] . "</td><td>" . $row["student_id"] . "</td><td>" . $row["time_id"] . "</td><td>" . $row["semester"] . "</td></tr>";
+			echo "<tr><td>" . $row["attend_id"] . "</td><td>" . $row["attend_status"] . "</td><td>" . $row["lect_id"] . "</td><td>" . $row["student_id"] . "</td><td>" . $row["attend_module"] . "</td><td>" . $row["attend_date"] . "</td></tr>";
 		}
 	}
 	else{
