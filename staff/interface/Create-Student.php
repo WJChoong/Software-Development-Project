@@ -15,7 +15,14 @@ session_start();
 		<div class="row bg-light">
 			<?php
 			require "../../conn.php";
-			$sql = SELECT * FROM course
+			$sql = "SELECT DISTINCT course_id
+					FROM course";
+	
+			$course_row = array();
+			$result = mysqli_query($link,$sql);
+			while ($row = mysqli_fetch_assoc($result)) {
+				$course_row[] = $row;
+			}
 			?>
 			<?php require "../design/navtab-managestudent.php"?>
 			<div class="col-md-9">
@@ -46,8 +53,8 @@ session_start();
 							<div class="col-8">
 								<select class="custom-select" name="gender">
 									<option value="#">--Gender--</option>
-									<option value="male">Male</option>
-									<option value="female">Female</option>
+									<option value="M">Male</option>
+									<option value="F">Female</option>
 								</select>
 							</div>
 						</div>
@@ -91,8 +98,12 @@ session_start();
 							<label class="col-3 col-form-label">Course</label> 
 							<div class="col-8">
 								<select id="select" name="select" class="custom-select" name="course">
-									<option value="#">--Course Name--</option>
-									
+									<option value="#">--Course--</option>
+									<?php
+										for ($i = 0;$i < count($course_row); $i++){ ?>
+											<option value="<?php echo $course_row[$i]["course_id"]; ?>"><?php echo $course_row[$i]["course_id"]; ?></option>
+										<?php }
+									?>
 								</select>
 							</div>
 					    </div>

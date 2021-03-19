@@ -23,14 +23,13 @@ if (isset($_POST["submit"])){
     
     //check whether the profile is successfully created
     if ($link->query($sql) === TRUE) {
-        header("Location: ../interface/Create-Notification.php?status=success");
+        echo "<script>alert('Notification Created Successfully');window.location.href='../interface/ManageNotification.php';</script>";
     } else {
-        echo("Error description: " . $link -> error);
-        // header("Location: ..inteface/Create-Notification.php?status=failed");
+        echo "<script>alert('Notification Created Successfully');window.location.href='../interface/ManageNotification.php';</script>";
     }
 } 
 else {
-    header("Location: ../interface/Create-Staff.php");
+    header("Location: ../interface/Create-Notification.php");
     exit();
 }
 ?>

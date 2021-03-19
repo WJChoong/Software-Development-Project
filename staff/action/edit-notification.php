@@ -10,9 +10,8 @@ $sql = "UPDATE noctification
         WHERE Notification_id = $id;";
  
 if ($link->query($sql2) === TRUE) {
-  header("Location: ../interface/ManageNotification.php?status=Success");
+  echo "<script>alert('Record Successfully Updated');window.location.href='../interface/ManageNotification.php';</script>";
 } else {
-  header("Location: ../interface/ManageNotification.php?status=Failed");
+  echo "<script>alert('Record Successfully Updated');window.location.href='../interface/ManageNotification.php';</script>";
 }
-
 ?>

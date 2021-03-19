@@ -54,7 +54,7 @@
 					<a class="btn btn-lg btn-light ml-auto mr-5" href="Create-Class.php" style="border: solid 1px;">+</a>
 				</div>
 				<br><br>
-				<table class="table" id="classTable">
+				<table class="table table-striped" id="classTable">
 					<thead>
 						<tr>
 							<th>No.</th>
@@ -67,23 +67,7 @@
 						</tr>
 					</thead>
 					<tbody id="tableList">
-						<?php
-						//  for ($i = 1;$i< 10;$i++){
-						// 	echo'<tr>
-						// 			<td>'.$i.'</td>
-						// 			<td>Kent</td>
-						// 			<td>UCDF1905ICT(SE)</td>
-						// 			<td>25/6/2021</td>
-						// 			<td>12:30 PM</td>
-						// 			<td>Kent</td>
-						// 			<td>
-						// 				<a class="btn btn-sm btn-success" href="#">View</a>
-						// 				<a class="btn btn-sm btn-success" href="#">Edit</a>
-						// 				<span class="btn btn-sm btn-success" id="btn-delete" style="margin: 5px;" data-toggle="modal" data-target="#exampleModalCenter">Delete</span>
-						// 			</td>
-						// 		</tr>';
-						// }
-						// ?>          
+					        
 					</tbody>
 				</table>
 			</div>

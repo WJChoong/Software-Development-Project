@@ -43,6 +43,7 @@ session_start();
 					$("#tableList").html(msg);
 				}, "json")
 			}
+			
 		</script>
 	</head>
 	
@@ -55,7 +56,7 @@ session_start();
 					<a class="btn btn-lg btn-light ml-auto mr-5" href="Create-Notification.php" style="border: solid 1px;">+</a>
 				</div>
 				<br><br>
-				<table class="table" id="notiTable">
+				<table class="table table-striped" id="notiTable">
 					<thead>
 						<tr>
 							<th>ID</th>
@@ -65,23 +66,7 @@ session_start();
 						</tr>
 					</thead>
 					<tbody id="tableList">
-						<?php
-						//  for ($i = 1;$i< 10;$i++){
-						// 	echo'<tr>
-						// 			<td>'.$i.'</td>
-						// 			<td>Merry Christmas</td>
-						// 			<td>01/03/2002</td>
-						// 			<td>10:30</td>
-						// 			<td>Abu Bakar</td>
-						// 			<td>
-						// 				<a class="btn btn-sm btn-success" style="margin: 5px;" href="View-Notification.php">View</a>
-						// 				<a class="btn btn-sm btn-success" style="margin: 5px;" href="Edit-Notification.php">Edit</a>
-						// 				<span class="btn btn-sm btn-success" id="btn-delete" style="margin: 5px;" data-toggle="modal" data-target="#exampleModalCenter">Delete</span>
-						// 			</div>
-						// 			</td>
-						// 		</tr>';
-						// }
-						?>          
+       
 					</tbody>
 				</table>
 			</div>

@@ -80,9 +80,9 @@ if (isset($_POST["submit"])){
             
             //check whether the profile is successfully created
             if ($link->query($sql2) === TRUE) {
-                header("Location: ../interface/ManageStudent.php?status=Success");
+                echo "<script>alert('Account is Created Successfully');window.location.href='../interface/ManageStudent.php';</script>";
             } else {
-                header("Location: ..inteface/ManageStudent.php?status=Failed");
+                echo "<script>alert('Fail to Create Account');window.location.href='../interface/ManageStudent.php';</script>";
             }
         }
         else {
@@ -90,7 +90,7 @@ if (isset($_POST["submit"])){
         }
     }
     else{
-        header("Location: ../interface/ManageStudent.php?error=unmatchpassword");
+        echo "<script>alert('Password is Unmatch');window.location.href='../interface/ManageStudent.php';</script>";
     }
 } 
 else {

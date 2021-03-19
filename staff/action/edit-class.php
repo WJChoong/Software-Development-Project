@@ -1,20 +1,19 @@
 <?php
 $id = $_GET["id"];
-$module = $_POST["module"];
+$module_id = $_GET["moduleID"];
+$module_group = $_GET["moduleGroup"];
 $date = $_POST["date"];
 $time = $_POST["time"];
-$lectName = $_POST["lectName"];
-$lectID = $_POST["lectID"];
 
 require "../../conn.php";
 $sql = "UPDATE timetable
-        SET time_id  = $module, time_date  = '$date', time_time = '$time', time_group = '$lectName', module_id = '$lectID'
+        SET  time_date  = '$date', time_time = '$time', time_group = $module_group, module_id = $module_id
         WHERE  time_id = $id;";
 
-if ($link->query($sql2) === TRUE) {
-  header("Location: ../interface/ManageClass.php?status=Success");
+if ($link->query($sql) === TRUE) {
+  echo "<script>alert('Record Successfully Updated');window.location.href='../interface/ManageClass.php';</script>";
 } else {
-  header("Location: ../interface/ManageClass.php?status=Failed");
+  echo "<script>alert('Record Failed to Updated');window.location.href='../interface/ManageClass.php';</script>";
 }
 
 ?>

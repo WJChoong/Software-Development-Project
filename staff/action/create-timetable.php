@@ -26,10 +26,9 @@ if (isset($_POST["submit"])){
     
     //check whether the profile is successfully created
     if ($link->query($sql) === TRUE) {
-        header("Location: ../interface/Create-Class.php?status=success");
+        echo "<script>alert('The class is recorded');window.location.href='../interface/ManageClass.php';</script>";
     } else {
-        echo("Error description: " . $link -> error);
-        header("Location: ..inteface/Create-Class.php?status=failed");
+        echo "<script>alert('Something went wrong');window.location.href='../interface/ManageClass.php';</script>";
     }
 } 
 else {

@@ -40,7 +40,7 @@ session_start();
 						msg += "<td>" + i.course_name + "</td>"
 						msg += "<td>"		
 						msg += "<a class='btn btn-sm btn-success' style='margin: 5px;' href='View-Student.php?id="+i.student_id+"'>View</a>"
-						msg += "<a class='btn btn-sm btn-success'id='btn-edit' style='margin: 5px;' href='Edit-Student.php?student=" + i.student_id + "'>Edit</a>"
+						msg += "<a class='btn btn-sm btn-success'id='btn-edit' style='margin: 5px;' href='Edit-Student.php?id=" + i.student_id + "'>Edit</a>"
 						msg += "<button class='btn btn-sm btn-success' id='btn-delete' value='" + i.student_id + "'>Delete</button>"
 						msg += "</td>"
 						msg += "</tr>"
@@ -61,7 +61,7 @@ session_start();
 					<a class="btn btn-lg btn-light ml-auto mr-5" href="Create-Student.php" style="border: solid 1px;">+</a>
 				</div>
 				<br><br>
-				<table class="table" id="stdTable">
+				<table class="table table-striped" id="stdTable">
 					<thead>
 						<tr>
 							<th>No.</th>
@@ -72,22 +72,7 @@ session_start();
 						</tr>
 					</thead>
 					<tbody id='tableList'>
-						<?php
-						//  for ($i = 1;$i< 10;$i++){
-						// 	echo'<tr>
-						// 			<td>'.$i.'</td>
-						// 			<td> $i.name.</td> 
-						// 			<td>Kent</td>
-						// 			<td>UCDF1905ICT(SE)</td>
-						// 			<td>
-						// 				<a class="btn btn-sm btn-success" style="margin: 5px;" value=' + $i.id + ' href="View-Student.php">View</a>
-						// 				<a class="btn btn-sm btn-success" style="margin: 5px;" href="Edit-Student.php">Edit</a>
-						// 				<span class="btn btn-sm btn-success" id="btn-delete" style="margin: 5px;" data-toggle="modal" data-target="#exampleModalCenter">Delete</span>
-						// 			</div>
-						// 			</td>
-						// 		</tr>';
-						// }
-						?>          
+        
 					</tbody>
 				</table>
 			</div>

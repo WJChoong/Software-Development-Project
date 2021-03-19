@@ -15,68 +15,82 @@
 					<picture style="margin: 10px;">
 						<img src="../img/Logo-APU.png" class="img-fluid img-thumbnail rounded mx-auto d-block" alt="">
 					</picture>
-					<br>
-					<h5 class="row justify-content-center font-weight-bold">Name</h5>
-					<h5 class="row justify-content-center">
-						<?php echo $name;?>
-					</h5>
-					<br>
-					<h5 class="row justify-content-center font-weight-bold">Student ID</h5>					
-					<h5 class="row justify-content-center">
-						<?php echo $id;?>
-					</h5>
-					<br>
-					<h5 class="row justify-content-center font-weight-bold">Date of Birth</h5>
-					<h5 class="row justify-content-center">
-						<?php echo $dob;?>
-					</h5>
-					<br>
-					<h5 class="row justify-content-center font-weight-bold">Phone Number</h5>
-					<h5 class="row justify-content-center">
-						<?php echo $num;?>
-					</h5>
-					<br>
-					<h5 class="row justify-content-center font-weight-bold">Gender</h5>
-					<h5 class="row justify-content-center">
-						<?php echo $gender;?>
-					</h5>
-					<br>
-					<h5 class="row justify-content-center font-weight-bold">Email</h5>
-					<h5 class="row justify-content-center">
-						<?php echo $email;?>
-					</h5>
-					<br>
-					<h5 class="row justify-content-center font-weight-bold">Street</h5>
-					<h5 class="row justify-content-center">
-						<?php echo $street;?>
-					</h5>
-					<br>
-					<h5 class="row justify-content-center font-weight-bold">State</h5>
-					<h5 class="row justify-content-center">
-						<?php echo $state;?>
-					</h5>
-					<br>
-					<h5 class="row justify-content-center font-weight-bold">City</h5>
-					<h5 class="row justify-content-center">
-						<?php echo $city;?>
-					</h5>
-					<br>
-					<h5 class="row justify-content-center font-weight-bold">Postcode</h5>
-					<h5 class="row justify-content-center">
-						<?php echo $postcode;?>
-					</h5>
-					<br>
-					<h5 class="row justify-content-center font-weight-bold">Country</h5>
-					<h5 class="row justify-content-center">
-						<?php echo $country;?>
-					</h5>
-					<br> 
-					<h5 class="row justify-content-center font-weight-bold">Course</h5>
-					<h5 class="row justify-content-center">
-						<?php echo $course;?>
-					</h5>
-					<br>
-
+					<div class="form-group row">
+						<label class="col-3 col-form-label">Name</label> 
+						<div class="col-8">
+							<input placeholder="<?php echo $name;?>" class="form-control here" type="text" disabled>
+						</div>
+					</div>
+					<div class="form-group row">
+						<label class="col-3 col-form-label">Student ID</label> 
+						<div class="col-8">
+							<input placeholder="<?php echo $id;?>" class="form-control here" type="text" disabled>
+						</div>
+					</div>
+					<div class="form-group row">
+						<label class="col-3 col-form-label">Date of Birth</label> 
+						<div class="col-8">
+							<input placeholder="<?php echo $dob;?>" class="form-control here" type="text" disabled>
+						</div>
+					</div>
+					<div class="form-group row">
+					<label class="col-3 col-form-label">Phone Number</label> 
+						<div class="col-8">
+							<input placeholder="<?php echo $num;?>"	 class="form-control here" type="text" disabled>
+						</div>
+					</div>
+					<div class="form-group row">
+						<label class="col-3 col-form-label">Gender</label> 
+						<div class="col-8">
+							<input placeholder="<?php echo $gender;?>" class="form-control here" type="text" disabled>
+						</div>
+					</div>
+					<div class="form-group row">
+						<label class="col-3 col-form-label">Email</label> 
+						<div class="col-8">
+							<input placeholder="<?php echo $email;?>" class="form-control here" type="text" disabled>
+						</div>
+					</div>
+					<div class="form-group row">
+						<label class="col-3 col-form-label">Street</label> 
+						<div class="col-8">
+							<input placeholder="<?php echo $street;?>" class="form-control here" type="text" disabled>
+						</div>
+					</div>
+					<div class="form-group row">
+						<label class="col-3 col-form-label">State</label> 
+						<div class="col-8">
+							<input placeholder="<?php echo $state;?>" class="form-control here" type="text" disabled>
+						</div>
+					</div>
+					<div class="form-group row">
+						<label class="col-3 col-form-label">City</label> 
+						<div class="col-8">
+							<input placeholder="<?php echo $city;?>" class="form-control here" type="text" disabled>
+						</div>
+					</div>
+					<div class="form-group row">
+						<label class="col-3 col-form-label">Postcode</label> 
+						<div class="col-8">
+							<input placeholder="<?php echo $postcode;?>" class="form-control here" type="text" disabled>
+						</div>
+					</div><div class="form-group row">
+						<label class="col-3 col-form-label">Country</label> 
+						<div class="col-8">
+							<input placeholder="<?php echo $country;?>" class="form-control here" type="text" disabled>
+						</div>
+					</div>
+					<div class="form-group row">
+						<label class="col-3 col-form-label">Course</label> 
+						<div class="col-8">
+							<input placeholder="<?php echo $course;?>" class="form-control here" type="text" disabled>
+						</div>
+					</div>
+					<div class="form-group row">
+						<div class="offset-4 col-8">
+							<a name="submit" type="submit" class="btn btn-primary" href="ManageStudent.php">Done</a>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>

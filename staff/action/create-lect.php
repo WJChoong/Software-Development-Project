@@ -77,17 +77,17 @@ if (isset($_POST["submit"])){
             
             //check whether the profile is successfully created
             if ($link->query($sql2) === TRUE) {
-                header("Location: ../interface/Create-Lecturer.php?status=success");
+                echo "<script>alert('Account Created Successfully');window.location.href='../interface/Create-Lecturer.php';</script>";
             } else {
-                header("Location: ..inteface/Create-Lecturer.php?status=failed");
+                echo "<script>alert('Fail to Create Account');window.location.href='../interface/Create-Lecturer.php';</script>";
             }
         }
         else {
-            header("Location: ..inteface/Create-Lecturer.php?status=nouser");
+            echo "<script>alert('No user is found');window.location.href='../interface/Create-Lecturer.php';</script>";
         }
     }
     else{
-        header("Location: ../interface/Create-Lecturer.php?error=unmatchpassword");
+        echo "<script>alert('Password are not the same');window.location.href='../interface/Create-Lecturer.php';</script>";
     }
 } 
 else {
