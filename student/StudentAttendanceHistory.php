@@ -79,7 +79,7 @@ table, th, td
 
 th
 {
-	 width: 250px;
+	 width: 500px;
 }
 
 
@@ -101,6 +101,9 @@ function percentage(partialValue, totalValue) {
 </nav>
 
 <Main>
+<h1>Attendance History</h1>
+<p>“Believe in yourself and all that you are. Know that there is something inside you that is greater than any obstacle.”<br>
+– Christian D. Larson</p>
 <table>
 	<tr>
 		<th>Module</th>
@@ -134,39 +137,7 @@ for ($x = 0; $x < COUNT($row1); $x++) {
 } 
 ?>
 
-</table>
 <br>
-
-<h1>Attendance History</h1>
-<p>“Believe in yourself and all that you are. Know that there is something inside you that is greater than any obstacle.”<br>
-– Christian D. Larson</p>
-	<table>
-	<tr>
-		<th>Attend Id</th>
-		<th>Attend Status</th>
-		<th>Lecturer Id</th>
-		<th>Student Id</th>
-		<th>Attend Module</th>
-		<th>Attend Date</th>
-	</tr>
-	<?php
-	require '../conn.php';
-	$sql = "SELECT * FROM attendance";
-	$result = $link-> query($sql);
-	
-	if($result->num_rows > 0) {
-		while ($row = $result-> fetch_assoc()){
-			echo "<tr><td>" . $row["attend_id"] . "</td><td>" . $row["attend_status"] . "</td><td>" . $row["lect_id"] . "</td><td>" . $row["student_id"] . "</td><td>" . $row["attend_module"] . "</td><td>" . $row["attend_date"] . "</td></tr>";
-		}
-	}
-	else{
-		echo "No Results";
-	}
-	$link-> close();
-	?>
-	</table>
-
-<br><br>
 </body>
 	
 </Main>
