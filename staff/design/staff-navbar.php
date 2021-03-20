@@ -6,15 +6,6 @@
 <script src="../jquery-3.5.1.min.js" type="text/javascript"></script>
 <script src="../bootstrap.min.js" type="text/javascript"></script>
 
-<script>
-	$(document).ready(function() {
-		
-		$("#btnlogout").click(function() {
-			$("#idModal").modal("show");
-		});
-	});
-</script>
-
 <nav class="navbar navbar-expand-md navbar-light bg-light border-bottom" style="padding: 0 30px;">
 	<img class="img-fluid" src="../img/Logo-APU.png" style="max-height:80px;">
 	<button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
@@ -29,34 +20,14 @@
 		<ul class="nav navbar-nav ml-auto">
 			<li class="nav-item dropdown">
 				<a class="nav-link dropdown-toggle" data-toggle="dropdown">Setting</a>
-				<div class="dropdown-menu dropdown-menu-right">
+				<div class="dropdown-menu dropdown-menu-right" id="DropList">
 					<a href="Profile.php" class="dropdown-item">Profile</a>
 					<a href="ChangePassword.php" class="dropdown-item">Change Password</a>
 					<div class="dropdown-divider"></div>
-					<a class="dropdown-item" id="btnlogout" data-toggle="modal" data-target="idModal">Logout</a>
+					<a class="dropdown-item" id="btnlogout" href="../action/logout.php">Logout</a>
 				</div>
 			</li>
 		</ul>
 	</div>
 </nav>
-
-<div class="modal fade" id="idModal" role="dialog">
-	<div class="modal-dialog">
-		<div class="modal-content">
-			<div class="modal-header">
-				<h5 class="modal-title">Message</h5>
-				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-					<span aria-hidden="true">&times;</span>
-				</button>
-			 </div>
-			<div class="modal-body">
-				Are you sure you want to log out ?
-			</div>
-			<div class="modal-footer">
-				<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-				<button type="button" class="btn btn-primary">Confirm</button>
-			</div>
-		</div>
-	</div>
-</div>
 		
