@@ -116,19 +116,22 @@ $moduleID = ['attend_module'];
 $attendStatus = ['attend_status'];
 
 require '../conn.php';	
-$sql = "SELECT attend_status, attend_module, COUNT(attend_status) FROM attendance WHERE attend_status = 1 AND student_id='".$_SESSION["st"]."'GROUP BY attend_module;";
+$sql1 = $sql = "SELECT attend_module FROM attendance WHERE attend_status = 1 AND student_id='".$_SESSION["st"]."'GROUP BY attend_module;";
+$result1 = mysqli_query($link, $sql1);
+$row1 = mysqli_fetch_assoc($result1);
+$sql2 = "SELECT COUNT(attend_status) FROM attendance WHERE student_id='".$_SESSION["st"]."'GROUP BY attend_module;";
+$result2 = mysqli_query($link, $sql2);
+$row2 = mysqli_fetch_assoc($result2);
+$sql = "SELECT attend_module, COUNT(attend_status) FROM attendance WHERE attend_status = 1 AND student_id='".$_SESSION["st"]."'GROUP BY attend_module;";
 $result = mysqli_query($link, $sql);
 $row = mysqli_fetch_assoc($result);
-print_r($row);	
-
-for ($x = 0; $x < 3; $x++) {
+for ($x = 0; $x < COUNT($row1); $x++) {
 	echo "<tr>";
-	echo "<td>" . $row["attend_status"] . "</td>";
 	echo "<td>" . $row["attend_module"] . "</td>";
+	echo "<td>" . $row2["COUNT(attend_status)"] . "</td>";
 	echo "<td>" . $row["COUNT(attend_status)"] . "</td>";
-  echo "</tr>";
+	echo "</tr>";
 } 
-	
 ?>
 
 </table>
