@@ -89,7 +89,7 @@ th
 		<th>Lecturer Id</th>
 	</tr>
 	<?php
-	$link = mysqli_connect('localhost','root','','sdp assignment','3306');
+	require '../conn.php';
 	$sql = "SELECT * FROM timetable";
 	$result = $link-> query($sql);
 	

@@ -101,6 +101,38 @@ function percentage(partialValue, totalValue) {
 </nav>
 
 <Main>
+<table>
+	<tr>
+		<th>Module</th>
+		<th>Overall Attendance</th>
+		<th>Present</th>
+	</tr>
+	
+<?php
+
+session_start();
+$_SESSION["st"] = 'ST001';
+$moduleID = ['attend_module'];
+$attendStatus = ['attend_status'];
+
+require '../conn.php';	
+$sql = "SELECT attend_status, attend_module, COUNT(attend_status) FROM attendance WHERE attend_status = 1 AND student_id='".$_SESSION["st"]."'GROUP BY attend_module;";
+$result = mysqli_query($link, $sql);
+$row = mysqli_fetch_assoc($result);
+print_r($row);	
+
+for ($x = 0; $x < 3; $x++) {
+	echo "<tr>";
+	echo "<td>" . $row["attend_status"] . "</td>";
+	echo "<td>" . $row["attend_module"] . "</td>";
+	echo "<td>" . $row["COUNT(attend_status)"] . "</td>";
+  echo "</tr>";
+} 
+	
+?>
+
+</table>
+<br>
 
 <h1>Attendance History</h1>
 <p>“Believe in yourself and all that you are. Know that there is something inside you that is greater than any obstacle.”<br>
@@ -115,7 +147,7 @@ function percentage(partialValue, totalValue) {
 		<th>Attend Date</th>
 	</tr>
 	<?php
-	$link = mysqli_connect('localhost','root','','sdp assignment','3306');
+	require '../conn.php';
 	$sql = "SELECT * FROM attendance";
 	$result = $link-> query($sql);
 	

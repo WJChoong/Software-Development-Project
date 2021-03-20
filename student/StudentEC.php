@@ -88,16 +88,15 @@ body
 
 <main>
 
-<form action="StudentphpEC.php">
-	<label for="EC_id">EC ID: </label>
-	<input type="text" id="EC_id" name="EC_id" ><br><br>
+<form action = "StudentphpEC.php" method = "POST">
+
 	<label for="student_id">Student ID: </label>
 	<input type="text" id="student_id" name="student_id" ><br><br>
 	<label for="EC_reason">EC Reason: </label>
 	<input type="text" id="EC_reason" name="EC_reason" ><br><br>
 	<label for="EC_date">EC Date: </label>
-	<input type="text" id="EC_date" name="EC_date" ><br><br>
-	<label for="lect_id">Lecturer ID: </label>
+	<input type="date" id="EC_date" name="EC_date" ><br><br>
+	<label for="lect_id">Lecturer Name: </label>
 	<input type="text" id="lect_id" name="lect_id" ><br><br>
 	<center><input type="submit" value="Submit"class="btn"></center>
 </form>

@@ -94,7 +94,7 @@ body
 </nav>
 
 <Main>
-
+-
 <center><h1>Student's Profile</h1></center>
 <br> 
 <center><p>Intake Code: UCDF1905ICT(SE)</p></center>
@@ -103,7 +103,7 @@ body
 <p>Change Password</p>
 <p>Change Username</p>
 
-</body>
 </Main>
+</body>
 </html>
 
