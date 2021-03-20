@@ -114,7 +114,7 @@ function percentage(partialValue, totalValue) {
 <?php
 
 session_start();
-$_SESSION["st"] = 'ST001';
+$_SESSION["st"] = 'ST00	1'; //declaration(have to delete)
 $moduleID = ['attend_module'];
 $attendStatus = ['attend_status'];
 
