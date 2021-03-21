@@ -1,11 +1,9 @@
 <?php
-<?php
 	session_start();
 		if(!isset($_SESSION['lect_id'])){
 		echo ("<script>alert('Oops! Please Log In First!')</script>");
 		die("<script>;window.location.href='../../Main Page/login.php';</script>");
 	}
-	?>
 $module_name = $_POST['module_name'];
 $module_group = $_POST['module_group'];
 $date = $_POST['date'];
