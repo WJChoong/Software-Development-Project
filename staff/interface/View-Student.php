@@ -13,7 +13,7 @@
 			<?php require "../action/view-student.php"; ?>
 				<div class="container vh-130 bg-light card body">
 					<picture style="margin: 10px;">
-						<img src="../img/Logo-APU.png" class="img-fluid img-thumbnail rounded mx-auto d-block" alt="">
+						<?php echo "<img src='data:image;base64,".base64_encode($pic)."' height='300' width='200'  class='img-fluid img-thumbnail rounded mx-auto d-block' alt='' >";?>
 					</picture>
 					<div class="form-group row">
 						<label class="col-3 col-form-label">Name</label> 

@@ -26,7 +26,7 @@ session_start();
 	<body>
 		<div class="container bg-light card-body">
 			<picture style="margin: 10px;">
-				<img src="../img/Logo-APU.png" class="img-fluid img-thumbnail rounded mx-auto d-block" alt="">
+			<?php echo "<img src='data:image;base64,".base64_encode($_SESSION['staff_pic'])."' height='300' width='200'  class='img-fluid img-thumbnail rounded mx-auto d-block' alt='' >";?>
 			</picture>
 			<br>
 			<h3 class="row justify-content-center">
@@ -40,8 +40,8 @@ session_start();
 				<a class="btn btn-lg btn-secondary col-12 col-sm-5" href="ManageStudent.php">Manage Students</a>
 				<a class="btn btn-lg btn-secondary col-12 col-sm-5" href="ManageClass.php">Manage Classes</a>
 				<a class="btn btn-lg btn-secondary col-12 col-sm-5" href="ManageNotification.php">Manage Notification</a>
-				<a class="btn btn-lg btn-secondary col-12 col-sm-5" href="Lecturer-Create.php">Add Lecturer</a>
-				<a class="btn btn-lg btn-secondary col-12 col-sm-5" href="Staff-Create.php">Add Staff</a>
+				<a class="btn btn-lg btn-secondary col-12 col-sm-5" href="Create-Lecturer.php">Add Lecturer</a>
+				<a class="btn btn-lg btn-secondary col-12 col-sm-5" href="Create-Staff.php">Add Staff</a>
 			</div>	
 		</div>
 	</body>

@@ -24,4 +24,5 @@ $postcode = $row["student_postcode"];
 $country = $row["student_country"];
 $course_id = $row["course_id"];
 $course = $row["course_name"];
+$pic = $row["student_photo"];
 ?>

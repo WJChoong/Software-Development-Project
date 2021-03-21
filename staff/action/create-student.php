@@ -33,11 +33,11 @@ if (isset($_POST["submit"])){
 
             //increment staff id by one
             $row = mysqli_fetch_assoc($results);
-            $num = explode("S", $row['student_id']);
+            $num = explode("ST", $row['student_id']);
             $count = strlen($num[1]);
             $num = intval($num[1]);
             $num++;
-            $id = "S";
+            $id = "ST";
 			while (strlen($id) != 5) {
 				$id .= "0";
 				if (strlen($id) + strlen($num) == 5) {
