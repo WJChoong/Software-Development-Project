@@ -21,7 +21,9 @@ session_start();
 		</style>
 	</head>
 		
-	<?php require "../design/staff-navbar.php"?>
+	<?php 
+		require "../design/staff-navbar.php";
+	?>
 	<br>
 	<body>
 		<div class="container bg-light card-body">

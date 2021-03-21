@@ -45,7 +45,7 @@ if (isset($_POST["submit"])){
 				}
 			}
 
-            $sql2 = "INSERT INTO staff (
+            $sql2 = "INSERT INTO student (
                                         student_id,
                                         student_name, 
                                         student_DOB,
@@ -77,7 +77,6 @@ if (isset($_POST["submit"])){
                             '$gender',
                             '$state'
                         );";
-            
             //check whether the profile is successfully created
             if ($link->query($sql2) === TRUE) {
                 echo "<script>alert('Account is Created Successfully');window.location.href='../interface/ManageStudent.php';</script>";

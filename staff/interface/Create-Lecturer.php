@@ -4,7 +4,7 @@ session_start();
 <!doctype html>
 <html>
 	<head>
-		<title>Untitled Document</title>
+		
 	</head>
 
 		<?php require "../design/staff-navbar.php"?>
