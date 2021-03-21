@@ -8,7 +8,6 @@
 		echo ("<script>alert('Oops! Please Log In First!')</script>");
 		die("<script>;window.location.href='../Main Page/login.php';</script>");
 	}
-	?>
 	//Step1:Get the information from the form & $_POST[''] is refer to your input object name
 	$modulename = $_POST['module_name'];
 	$modulegroup = $_POST['module_group'];

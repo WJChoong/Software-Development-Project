@@ -1,4 +1,9 @@
 <?php
+session_start();
+		if(!isset($_SESSION['lect_id'])){
+		echo ("<script>alert('Oops! Please Log In First!')</script>");
+		die("<script>;window.location.href='../Main Page/login.php';</script>");
+	}
 $id = $_POST['id'];
 $oldpassword = $_POST['oldpassword'];
 $newpassword = $_POST['newpassword'];
