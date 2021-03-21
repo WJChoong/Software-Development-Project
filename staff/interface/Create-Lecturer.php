@@ -69,9 +69,15 @@ session_start();
 							</div>
 					    </div>
 						<div class="form-group row">
+							<label class="col-3 col-form-label">State</label> 
+							<div class="col-8">
+								<input placeholder="Country" class="form-control here" name ="state" type="text">
+							</div>
+					    </div>
+						<div class="form-group row">
 							<label class="col-3 col-form-label">Country</label> 
 							<div class="col-8">
-								<input placeholder="Country" class="form-control here" name ="country" type="text">
+								<input placeholder="State" class="form-control here" name ="country" type="text">
 							</div>
 					    </div>
 					    <div class="form-group row">

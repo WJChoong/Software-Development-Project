@@ -36,7 +36,7 @@ if (isset($_POST["submit"])){
             $count = strlen($num[1]);
             $num = intval($num[1]);
             $num++;
-            $id = "ST";
+            $id = "LT";
 			while (strlen($id) != 5) {
 				$id .= "0";
 				if (strlen($id) + strlen($num) == 5) {
