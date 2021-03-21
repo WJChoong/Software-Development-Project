@@ -18,11 +18,13 @@ $sql1 = "SELECT lect_name,
 		 WHERE lect_id = '".$_SESSION['lect_id']."';
 		 ";
 $results = mysqli_query($link,$sql1); //return whether there is a result
+
 if(mysqli_num_rows($results)>0){
     $row = mysqli_fetch_assoc($results);
 	$_SESSION["lect_name"] = $row["lect_name"];
 	$_SESSION["lect_DOB"] = $row["lect_DOB"];
 	$_SESSION["lect_num"] = $row["lect_num"];
+    //determine full name for gender
 	if ($row["lect_gender"] == 'M'){
 		$_SESSION["lect_gender"] = 'Male';
 	}

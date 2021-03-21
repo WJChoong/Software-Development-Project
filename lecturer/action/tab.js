@@ -18,29 +18,3 @@ function openTab(evt, roles) {
   document.getElementById(roles).style.display = "block";
   evt.currentTarget.className += " active";
 }
- 
-  // Show password (Initially the input type is password, if checkbox is selected then input type will change to text)
-  function myFunctionS() {
-  var x = document.getElementById("student password");
-  if (x.type === "password") {
-    x.type = "text";
-  } else {
-    x.type = "password";
-  }
- }
-  function myFunctionL() {
-    var x = document.getElementById("lecturer password");
-  if (x.type === "password") {
-    x.type = "text";
-  } else {
-    x.type = "password";
-  }
- }
-   function myFunctionA() {
-    var x = document.getElementById("admin password");
-  if (x.type === "password") {
-    x.type = "text";
-  } else {
-    x.type = "password";
-  }
-}

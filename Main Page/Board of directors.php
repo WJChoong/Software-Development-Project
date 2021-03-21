@@ -87,7 +87,6 @@
 			<b>Dr. Tan Chye Cheah</b> - Technical Assistant (chyecheahapu@gmail.com)<br>
 			<b>Dr. Vinothini Kasinathan</b> - Top Agent (vinothiniapu@gmail.com)<br>
 			</div>
-			<script type="text/javascript" src="External/tab.js"></script>
 			</body>
 </html>
 			

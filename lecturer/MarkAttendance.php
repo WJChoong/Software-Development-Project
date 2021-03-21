@@ -5,7 +5,8 @@
 	<?php
 	session_start();
 		if(!isset($_SESSION['lect_id'])){
-		die(header("location: ../Main Page/login.php"));
+		echo ("<script>alert('Oops! Please Log In First!')</script>");
+		die("<script>;window.location.href='../Main Page/login.php';</script>");
 	}
 	?>
 	<?php require "design/lec-navbar.php"?>
@@ -18,10 +19,10 @@
 					<br>
 					<form method="post" action="MarkAttendance2.php">
 						<div class="form-group row">
-							<label class="col-3 col-form-label">Module ID</label> 
+							<label class="col-3 col-form-label">Module Name</label> 
 							<div class="col-8">
 							<select class="custom-select form-control" name="module_name" required>
-							<option value="">--Module ID--</option>
+							<option value="">--Module Name--</option>
 						<?php 			             
 					    //Step 1 - Establishing connection
 						 include('../conn.php');
@@ -48,7 +49,7 @@
 					    //Step 1 - Establishing connection
 						 include('../conn.php');
 						//Step 3 - Execute SQL query
-						$sql = "SELECT module_group FROM module WHERE lect_id = '".$_SESSION['lect_id']."'";
+						$sql = "SELECT DISTINCT module_group FROM module WHERE lect_id = '".$_SESSION['lect_id']."'";
 						$result = mysqli_query($link, $sql);
 						//Step 4 - Process result
 						if(mysqli_affected_rows($link)>0){
@@ -103,6 +104,7 @@
 								</select>
 							</div>
 						</div>
+						<p class="row justify-content-center" style="color:red">*Reminder: No changes available except students' attend status after attendance taking</p>
 					    <div class="form-group row">
 							<div class="offset-4 col-8">
 								<button name="submit" type="submit" class="btn btn-primary">Proceed >>></button>

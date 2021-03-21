@@ -3,14 +3,13 @@
 include "../../conn.php"; //link the conn.php info to here
 
 //step 2:create the SQL statement (since this is update)
-$sql = "UPDATE ec SET EC_status = '0' WHERE EC_id = ".$_GET['EC_id'];
-$result = mysqli_query ($link, $sql);
+$sql = "UPDATE ec SET EC_status = '1' WHERE EC_id = ".$_GET['EC_id'];
 
 //step 3:execute the SQL statement
 mysqli_query($link, $sql); //the $conn is the variable in conn.php which store the database information
 
 //step 4: to check the query executed or not!
-if(mysqli_affected_rows($link) >0)
+if(mysqli_affected_rows($link) <=0)
 {
 	die("<script>alert('Something went wrong. Please try again later.')</script>");
 }

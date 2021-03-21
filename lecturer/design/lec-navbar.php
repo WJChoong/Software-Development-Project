@@ -14,7 +14,7 @@
 	<div id="navbarCollapse" class="collapse navbar-collapse">
 		<ul class="nav navbar-nav mr-auto">
 			<li class="nav-item">
-				<a href="#" class="nav-link">Home</a>
+				<a href="MainPage.php" class="nav-link">Home</a>
 			</li>
 		</ul>
 		<ul class="nav navbar-nav ml-auto">
