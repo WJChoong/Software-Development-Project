@@ -72,7 +72,16 @@ body
 </form>	
 <br><br><br><br>
  </div>
+ 
+<?php
 
+session_start();
+require '../conn.php';
+
+$_SESSION['st0001'];
+
+} 
+?>
 	
 </Main>
 </body>
