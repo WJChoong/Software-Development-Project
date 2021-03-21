@@ -14,8 +14,10 @@ include "../../conn.php"; //link the conn.php info to here
 		}
 
 //step 2:create the SQL statement (since this is update)
-$sql = "UPDATE lecturer SET lect_password = '$newpassword' WHERE lect_id = '$id' AND lect_password ='$oldpassword'";
-$result = mysqli_query ($link, $sql);
+$sql = "UPDATE lecturer SET lect_password = '$newpassword' 
+		WHERE lect_id = '$id'
+		AND lect_id = '".$_SESSION['lect_id']."'
+		AND lect_password ='$oldpassword'";
 
 //step 3:execute the SQL statement
 mysqli_query($link, $sql); //the $conn is the variable in conn.php which store the database information

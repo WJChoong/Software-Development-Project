@@ -2,79 +2,83 @@
 <html>
 	<head>
 	</head>
-	
+	<?php
+	session_start();
+		if(!isset($_SESSION['lect_id'])){
+		echo ("<script>alert('Oops! Please Log In First!')</script>");
+		die("<script>;window.location.href='../Main Page/login.php';</script>");
+	}
+	?>
 	<?php require "design/lec-navbar.php"?>
 	<body style="background-color: rgba(0,0,0,0.1);">
 		<div class="row bg-light">
 			<?php require "design/lecnavtab-attendancehistory.php"?>
 			<div class="col-md-9 card body">
-				<div class="row">
-					<form action="" class="col-md-6 mr-auto">
-						<div class="input-group mb-3">
-							<div class="input-group-prepend">
-								<button class="btn btn-light dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">All</button>
-								<div class="dropdown-menu">
-								<?php
-									echo '<a class="dropdown-item disabled">Module</a>';
-									echo '<div role="separator" class="dropdown-divider"></div>';
-									 //Step 1 - Establishing connection
-									include('../conn.php');
-									//Step 2 - Execute SQL query
-									$sql = 'SELECT * FROM table';
-									$result = mysqli_query($link, $sql);
-									//Step 4 - Process result
-									if(mysqli_affected_rows($link)>0){
-									for ($i = 0; $i < mysqli_num_rows($result); $i++){
-									$row  = mysqli_fetch_assoc($result);
-									echo '<tr>';
-									echo '<td>'.$row['EC_student_id'].'</td>';
-									echo '<td>'.$row['EC_date'].'</td>';					
-									echo '<td>'.$row['EC_reason'].'</td>';
-									echo '<td><img src="'.$row['EC_photo'].'"width = 100 height = 100 alt = 
-									"Image not available"/></td>';	
-									echo '<td><a href = "#"><button>Accepted</button></a> <a href = "#"><button>Rejected</button></a></td>';
-									}
-									}
-								?>
-								  
-								</div>
-							</div>
-							<input type="text" class="form-control" aria-label="Search input with dropdown button">
-							<div class="input-group-append">
-								<button class="btn btn-success" type="button">Search</button>
-							</div>
-						</div>
-					</form>
-				</div>
 				<br><br>
-				<table class="table">
+				<table class="table" id="AttendanceHistory">
 					<thead>
 						<tr>
-							<th>Day</th>
 							<th>Date</th>
-							<th>Time</th>
 							<th>Module</th>
-							<th>Intake</th>
+							<th>Module Group</th>
+							<th>Duration</th>
+							<th>Start Time</th>
+							<th>Overall</th>
 							<th>Action</th>
 						</tr>
 					</thead>
 					<tbody>
 						<?php
-						$i =  array("Monday","Tuesday","Wednesday","Thursday","Friday");
-						$i[1] = "Monday";
+						 //Step 1 - Establishing connection
+						 include('../conn.php');
+						//Step 2 - Execute SQL query
+						$sql = "SELECT DISTINCT attend_date, attend_module, attend_group, attend_duration, start_time, lect_id
+								FROM attendance
+								WHERE lect_id = '".$_SESSION['lect_id']."'";
+								
+						$result = mysqli_query($link, $sql);
+						//Step 3 - Process result
+						if(mysqli_affected_rows($link)>0){
+						for ($i = 0; $i < mysqli_num_rows($result); $i++){
+						$row  = mysqli_fetch_assoc($result);
 						
-						 for ($i = 1;$i< 6;$i++){
-							echo'<tr>
-									<td>'.$i.'</td>
-									<td>2/2/2021</td>
-									<td>8:30am - 10:30am</td>
-									<td>Software Development Project</td>
-									<td>UCDF1905ICT(SE)</td>
-								<td>
-										<a class="btn btn-sm btn-success" style="margin: 5px;" href="#">Edit</a>
-										<a class="btn btn-sm btn-success" style="margin: 5px;" href="#">Delete</a>
-								</td>
-								</tr>';
+						
+						//Step 4 - Calculate Number of Student Present
+						$overall = "SELECT COUNT(*)
+								    FROM attendance
+									WHERE attend_date = '".$row['attend_date']."'
+									AND attend_module = '".$row['attend_module']."'
+									AND attend_group = '".$row['attend_group']."'
+									AND start_time = '".$row['start_time']."'
+									AND lect_id = '".$_SESSION['lect_id']."'
+									AND attend_status='1'";
+					    $result2 = mysqli_query($link, $overall);
+						$row2  = mysqli_fetch_assoc($result2);
+						
+						//Step 5 - Total number of student in that particular module and time
+						$total = "SELECT COUNT(*)
+								    FROM attendance
+									WHERE attend_date = '".$row['attend_date']."'
+									AND attend_module = '".$row['attend_module']."'
+									AND attend_group = '".$row['attend_group']."'
+									AND start_time = '".$row['start_time']."'
+									AND lect_id = '".$_SESSION['lect_id']."'";
+					    
+						$result3 = mysqli_query($link, $total);
+						$row3  = mysqli_fetch_assoc($result3);
+						
+						
+						echo '<tr>';
+						echo '<td>'.$row['attend_date'].'</td>';
+						echo '<td>'.$row['attend_module'].'</td>';	
+						echo '<td>'.$row['attend_group'].'</td>';
+						echo '<td>'.$row['attend_duration'].'</td>';
+						echo '<td>'.$row['start_time'].'</td>';
+						echo '<td>'.$row2['COUNT(*)'].'/'.$row3['COUNT(*)'].'</td>';
+						echo '<td>
+							<a href = "EditAttendance.php?date='.$row['attend_date'].'&start='.$row['start_time'].'&module='.$row['attend_module'].'" class="btn btn-sm btn-success">Edit</a> 
+							<a href = "action/deleteattendance.php?date='.$row['attend_date'].'&start='.$row['start_time'].'&module='.$row['attend_module'].'" class="btn btn-sm btn-success">Delete</a> </td>';							
+						}
 						}
 						?>          
 					</tbody>

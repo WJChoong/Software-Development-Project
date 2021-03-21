@@ -71,7 +71,7 @@
 					<div class="row">
 							<div class="col-4">
 									<div class="card">
-											<img src="image/covid.jpeg" class="card-img-top">
+											<img src="image/covid.jpg" class="card-img-top">
 											<div class="card-body">
 												<p class="card-text">
 														21 Jan 2021 Malaysia has logged another 3,170 new Covid-19 cases today.
@@ -82,7 +82,7 @@
 							</div>
 							<div class="col-4">
 									<div class="card">
-											<img src="image/competition.png" class="card-img-top">
+											<img src="image/competition.jpg" class="card-img-top">
 											<div class="card-body">
 												<p class="card-text">
 														2 Mar 2021 The basketball match will be held on APU basketball court.
@@ -95,7 +95,7 @@
 							</div>
 							<div class="col-4">
 									<div class="card">
-											<img src="image/talk.png" class="card-img-top">
+											<img src="image/talk.jpg" class="card-img-top">
 											<div class="card-body">
 												<p class="card-text">
 														2 Feb 2021 Kuala lumpur will be having a talk about I am a young entrepreneur.

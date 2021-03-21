@@ -29,7 +29,7 @@ session_start();
 				<div class="container bg-light card body">
 					<h3 class="row justify-content-center font-weight-bold">Create Information</h3>
 					<br>
-					<form action="" method="post">
+					<form action="../action/create-student.php" method="post">
 						<div class="form-group row">
 							<label class="col-3 col-form-label">Name</label> 
 							<div class="col-8">
@@ -97,7 +97,7 @@ session_start();
 					    <div class="form-group row">
 							<label class="col-3 col-form-label">Course</label> 
 							<div class="col-8">
-								<select id="select" name="select" class="custom-select" name="course">
+								<select id="select" class="custom-select" name="course">
 									<option value="#">--Course--</option>
 									<?php
 										for ($i = 0;$i < count($course_row); $i++){ ?>
