@@ -21,7 +21,7 @@ else {
 	     // Storing username in session variable 
 	     $user = mysqli_fetch_assoc($login);
         $_SESSION['lect_id'] = $user['lect_id'];
-	    header("location: ../Timetable.php");
+	    header("location: ../MainPage.php");
     }
 mysqli_close($conn);     
 ?>

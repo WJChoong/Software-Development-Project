@@ -93,9 +93,7 @@ function percentage(partialValue, totalValue) {
 
 <nav>
 	<a href="LoginPage">Home page</a>
-	<a href="StudentProfile.php">Account</a>
 	<a href="StudentAttendanceHistory.php">Attendance History</a>
-	<a href="StudentTimetable.php">Timetable</a> 	
 	<a href="StudentEC.php">Student EC</a> 
 	<a href="logout.php">Log Out</a>
 </nav>
@@ -114,7 +112,7 @@ function percentage(partialValue, totalValue) {
 <?php
 
 session_start();
-$_SESSION["st"] = 'ST00	1'; //declaration(have to delete)
+$_SESSION["st"] = 'ST001';
 $moduleID = ['attend_module'];
 $attendStatus = ['attend_status'];
 

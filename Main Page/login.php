@@ -107,17 +107,17 @@
 				</div></center>
 		
 				<center><div id="admin" class="tabcontent" style="display : none">
-				<form method="post" action="PHP/login.php">
+				<form method="post" action="../staff/action/login-staff.php">
 				<center><i><p style="font-size: 24px; color:white"> Administrator Sign In </p></i></center>
 				<div class="form-group row justify-content-center">
 				<img src ="image/id.jpg" alt="Email" width="50px" height="40px" class="mb-1"></img>
 				<div class="col-5">
-				<input type="text" class="form-control here" id="admin ID" name="admin_ID" placeholder="Administrator ID" required>
+				<input type="text" class="form-control here" id="admin ID" name="staff_ID" placeholder="Administrator ID" required>
 				</div></div>
 				<div class="form-group row justify-content-center">
 				<img src ="image/password.jpg" alt="Email" width="50px" height="40px" class="mb-1"></img>
 				<div class="col-5">
-				<input type="password" class="form-control here" id="admin password" name="admin password"  placeholder="Password" required>
+				<input type="password" class="form-control here" id="admin password" name="staff password"  placeholder="Password" required>
 				<i class="fa fa-eye" onclick="myFunctionA()" style="color:yellow"> Show Password</i> 
 				</div></div><br>
 				<input type="submit" value="LOGIN"></form><br>

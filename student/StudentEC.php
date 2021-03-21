@@ -69,7 +69,35 @@ body
   background-color: #ff1a1a;
 }
 
+.col-50 {
+  -ms-flex: 50%; /* IE10 */
+  flex: 50%;
+}
 
+.col-75 {
+  -ms-flex: 75%; /* IE10 */
+  flex: 75%;
+}
+
+.col-50,
+.col-75 {
+  padding: 0 20px;
+}
+
+.container {
+  background-color: #e6f3ff;
+  padding: 10px 50px 15px 20px;
+  border: 1px solid light blue;
+  border-radius: 20px;
+}
+
+input[type=text] {
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 15px;
+}
 </style>
 
 
@@ -77,28 +105,34 @@ body
 
 <nav>
 	<a href="LoginPage">Home page</a>
-	<a href="StudentProfile.php">Account</a>
-	<a href="StudentAttendanceHistory.php">Attendance History</a>
-	<a href="StudentTimetable.php">Timetable</a> 	
+	<a href="StudentAttendanceHistory.php">Attendance History</a>	
 	<a href="StudentEC.php">Student EC</a> 
 	<a href="logout.php">Log Out</a>
 </nav>
 
-<center><h1>Student's EC<h1></center><br><br>
-
+<center><h1>Student's EC<h1></center>
+<center><p>“Education is the passport to the future, for tomorrow belongs to those who prepare for it today.”<br> — Malcolm X
+<p></center>
+<br><br>
 <main>
 
 <form action = "StudentphpEC.php" method = "POST">
-
+ <div class="container">
+ 
+  <div class="col-75">
+   <div class="col-50">
 	<label for="student_id">Student ID: </label>
 	<input type="text" id="student_id" name="student_id" ><br><br>
 	<label for="EC_reason">EC Reason: </label>
 	<input type="text" id="EC_reason" name="EC_reason" ><br><br>
-	<label for="EC_date">EC Date: </label>
+	<label for="EC_date">EC Date: </label><br>
 	<input type="date" id="EC_date" name="EC_date" ><br><br>
 	<label for="lect_id">Lecturer Name: </label>
 	<input type="text" id="lect_id" name="lect_id" ><br><br>
 	<center><input type="submit" value="Submit"class="btn"></center>
+   </div>
+  </div>
+ </div>
 </form>
 	
 </main>

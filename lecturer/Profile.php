@@ -3,8 +3,8 @@
 	session_start();
 		if(!isset($_SESSION['lect_id'])){
 		echo ("<script>alert('Oops! Please Log In First!')</script>");
-		die("<script>;window.history.go(-1);</script>");
-		}
+		die("<script>;window.location.href='../Main Page/login.php';</script>");
+	}
 	?>
 <html>
 	<head>
@@ -23,10 +23,10 @@
 					require "action/profile.php";
 					?>
 						<picture style="margin: 10px;">
-					<img src="s<?= $_SESSION['lect_pic'];?>"  class="img-fluid img-thumbnail rounded mx-auto d-block" alt="">
+					<?php echo "<img src='data:image;base64,".base64_encode($_SESSION['lect_pic'])."' height='300' width='200'  class='img-fluid img-thumbnail rounded mx-auto d-block' alt='' >";?>
 				</picture>
 				<br>
-				<h5 class="row justify-content-center font-weight-bold">Staff ID</h5>
+				<h5 class="row justify-content-center font-weight-bold">Lecturer ID</h5>
 				<h5 class="row justify-content-center">
 					<?php 
 						echo $_SESSION['lect_id'];
