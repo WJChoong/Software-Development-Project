@@ -20,19 +20,19 @@ session_start();
                         <div class="form-group row">
 							<label class="col-3 col-form-label">Notification ID</label> 
 							<div class="col-8">
-								<input value="<?php echo $id;?>" class="form-control here" type="text" name="id">
+								<input value="<?php echo $id;?>" class="form-control here" type="text" name="id" required=required>
 							</div>
 						</div>
 						<div class="form-group row">
 							<label class="col-3 col-form-label">Notification Title</label> 
 							<div class="col-8">
-								<input value="<?php echo $notiTitle;?>" class="form-control here" type="text" name="title">
+								<input value="<?php echo $notiTitle;?>" class="form-control here" type="text" name="title" required=required>
 							</div>
 						</div>
 						<div class="form-group row">
 							<label class="col-3 col-form-label">Staff ID</label> 
 							<div class="col-8">
-								<input value="<?php echo $staffID;?>" class="form-control here" type="text" name="staffID">
+								<input value="<?php echo $staffID;?>" class="form-control here" type="text" name="staffID" required=required>
 							</div>
 						</div>
 						<div class="form-group row">

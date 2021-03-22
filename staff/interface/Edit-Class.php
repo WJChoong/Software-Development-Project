@@ -26,13 +26,13 @@ session_start();
 						<div class="form-group row">
 							<label class="col-3 col-form-label">Date</label> 
 							<div class="col-8">
-								<input value="<?php echo $date;?>" class="form-control here" type="date" name="date">
+								<input value="<?php echo $date;?>" class="form-control here" type="date" name="date" required=required>
 							</div>
 						</div>
 						<div class="form-group row">
 							<label class="col-3 col-form-label">Time</label> 
 							<div class="col-8">
-								<input value="<?php echo $time;?>" class="form-control here" type="time" name="time">
+								<input value="<?php echo $time;?>" class="form-control here" type="time" name="time" required=required>
 							</div>
 						</div>
 						<div class="form-group row">

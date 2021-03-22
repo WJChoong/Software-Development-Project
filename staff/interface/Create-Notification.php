@@ -25,7 +25,7 @@ session_start();
 						<div class="form-group row">
 							<label class="col-3 col-form-label">Notification content</label> 
 							<div class="col-8">
-						    	<textarea  placeholder="Write your content here" class="form-control here" rows="8" cols="50" name="content"></textarea>
+						    	<textarea  placeholder="Write your content here" class="form-control here" rows="8" cols="50" name="content" required=required></textarea>
 							</div>
 					  	</div>
 					    <div class="form-group row">

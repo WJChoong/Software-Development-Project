@@ -27,8 +27,8 @@
 						<div class="form-group row">
 							<label class="col-3 col-form-label">Module</label> 
 							<div class="col-8">
-								<select class="custom-select" name="module">
-									<option value="#">--Module--</option>
+								<select class="custom-select" name="module" required=required>
+									<option value="">--Module--</option>
 									<?php
 										for ($i = 0;$i < count($module_row); $i++){ ?>
 											<option value="<?php echo $module_row[$i]["module_id"]; ?>"><?php echo $module_row[$i]["module_name"]; ?></option>
@@ -40,8 +40,8 @@
 						<div class="form-group row">
 							<label class="col-3 col-form-label">Group</label> 
 							<div class="col-8">
-								<select class="custom-select" name="group">
-									<option value="#">--Group--</option>
+								<select class="custom-select" name="group" required=required>
+									<option value="">--Group--</option>
 									<option value="L1">L1</option>
 									<option value="L2">L2</option>
 									<option value="T1">T1</option>
@@ -55,13 +55,13 @@
 					    <div class="form-group row">
 							<label class="col-3 col-form-label">Time</label> 
 							<div class="col-8">
-								<input class="form-control here" type="time"  name="time">
+								<input class="form-control here" type="time"  name="time" required=required>
 							</div>
 					    </div>
 					    <div class="form-group row">
 							<label class="col-3 col-form-label">Date</label> 
 							<div class="col-8">
-								<input class="form-control here" type="date"  name="date">
+								<input class="form-control here" type="date"  name="date" required=required>
 							</div>
 					    </div>
 					    <div class="form-group row">

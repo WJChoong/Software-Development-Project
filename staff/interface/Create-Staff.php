@@ -19,13 +19,13 @@
 						<div class="form-group row">
 							<label class="col-3 col-form-label">Name</label> 
 							<div class="col-8">
-							  <input placeholder="Name" class="form-control here" name="name" type="text">
+							  <input placeholder="Name" class="form-control here" name="name" type="text" required=required>
 							</div>
 						</div>
 						<div class="form-group row">
 							<label class="col-3 col-form-label">Date of Birth</label> 
 							<div class="col-8">
-								<input placeholder="dd/mm/yyyy" class="form-control here" name="dob" type="date">
+								<input placeholder="dd/mm/yyyy" class="form-control here" name="dob" type="date" required=required>
 							</div>
 						</div>
 					    <div class="form-group row">
@@ -37,8 +37,8 @@
 						<div class="form-group row">
 							<label class="col-3 col-form-label">Gender</label> 
 							<div class="col-8">
-								<select class="custom-select" name="gender">
-									<option value="#">--Gender--</option>
+								<select class="custom-select" name="gender" required=required>
+									<option value="">--Gender--</option>
 									<option value="M">Male</option>
 									<option value="F">Female</option>
 								</select>
@@ -53,49 +53,49 @@
 					    <div class="form-group row">
 							<label class="col-3 col-form-label">Street</label> 
 							<div class="col-8">
-								<input placeholder="Street" class="form-control here" name="street" type="text">
+								<input placeholder="Street" class="form-control here" name="street" type="text" required=required>
 							</div>
 					    </div>
 						<div class="form-group row">
 							<label class="col-3 col-form-label">Postcode</label> 
 							<div class="col-8">
-								<input placeholder="PostCode" class="form-control here" name="postcode" type="text">
+								<input placeholder="PostCode" class="form-control here" name="postcode" type="text" required=required>
 							</div>
 					    </div>
 						<div class="form-group row">
 							<label class="col-3 col-form-label">City</label> 
 							<div class="col-8">
-								<input placeholder="City" class="form-control here" name="city" type="text">
+								<input placeholder="City" class="form-control here" name="city" type="text" required=required>
 							</div>
 					    </div>
 						<div class="form-group row">
 							<label class="col-3 col-form-label">State</label> 
 							<div class="col-8">
-								<input placeholder="State" class="form-control here" name="state" type="text">
+								<input placeholder="State" class="form-control here" name="state" type="text" required=required>
 							</div>
 					    </div>
 						<div class="form-group row">
 							<label class="col-3 col-form-label">Country</label> 
 							<div class="col-8">
-								<input placeholder="Country" class="form-control here" name="country" type="text">
+								<input placeholder="Country" class="form-control here" name="country" type="text" required=required>
 							</div>
 					    </div>
 					    <div class="form-group row">
 							<label class="col-3 col-form-label">Password</label> 
 							<div class="col-8">
-								<input placeholder="Password" class="form-control here" name="password" type="password">
+								<input placeholder="Password" class="form-control here" name="password" type="password" required=required>
 							</div>
 					    </div>
 						<div class="form-group row">
 							<label class="col-3 col-form-label">Confirm Password</label> 
 							<div class="col-8">
-								<input placeholder="Confirm Password" class="form-control here" name="password2" type="password">
+								<input placeholder="Confirm Password" class="form-control here" name="password2" type="password" required=required>
 							</div>
 					    </div> 
 						<div class="form-group row">
 							<label class="col-3 col-form-label">Upload Your Photo</label> 
 							<div class="col-8">
-								<input class="custom-file-input" name="photo" id="customFile" type="file">
+								<input class="custom-file-input" name="photo" id="customFile" type="file" required=required>
 								<label class="custom-file-label ml-3">Choose file</label>
 							</div>
 					    </div> 

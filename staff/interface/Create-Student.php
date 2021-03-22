@@ -39,7 +39,7 @@ session_start();
 						<div class="form-group row">
 							<label class="col-3 col-form-label">Date of Birth</label> 
 							<div class="col-8">
-								<input placeholder="dd/mm/yyyy" class="form-control here" type="date" name="dob">
+								<input placeholder="dd/mm/yyyy" class="form-control here" type="date" name="dob" required=required> 
 							</div>
 						</div>
 					    <div class="form-group row">
@@ -67,38 +67,38 @@ session_start();
 					    <div class="form-group row">
 							<label class="col-3 col-form-label">Street</label> 
 							<div class="col-8">
-								<input placeholder="Street" class="form-control here" type="text" name="street">
+								<input placeholder="Street" class="form-control here" type="text" name="street" required=required>
 							</div>
 					    </div>
 						<div class="form-group row">
 							<label class="col-3 col-form-label">State</label> 
 							<div class="col-8">
-								<input placeholder="State" class="form-control here" type="text" name="state">
+								<input placeholder="State" class="form-control here" type="text" name="state" required=required>
 							</div>
 					    </div>
 						<div class="form-group row">
 							<label class="col-3 col-form-label">City</label> 
 							<div class="col-8">
-								<input placeholder="City" class="form-control here" type="text" name="city">
+								<input placeholder="City" class="form-control here" type="text" name="city" required=required>
 							</div>
 					    </div>
 						<div class="form-group row">
 							<label class="col-3 col-form-label">Postcode</label> 
 							<div class="col-8">
-								<input placeholder="Postcode" class="form-control here" type="text" name="postcode">
+								<input placeholder="Postcode" class="form-control here" type="text" name="postcode" required=required>
 							</div>
 					    </div>
 						<div class="form-group row">
 							<label class="col-3 col-form-label">Country</label> 
 							<div class="col-8">
-								<input placeholder="Country" class="form-control here" type="text" name="country">
+								<input placeholder="Country" class="form-control here" type="text" name="country" required=required>
 							</div>
 						</div>
 					    <div class="form-group row">
 							<label class="col-3 col-form-label">Course</label> 
 							<div class="col-8">
-								<select id="select" class="custom-select" name="course">
-									<option value="#">--Course--</option>
+								<select id="select" class="custom-select" name="course" required=required>
+									<option value="">--Course--</option>
 									<?php
 										for ($i = 0;$i < count($course_row); $i++){ ?>
 											<option value="<?php echo $course_row[$i]["course_id"]; ?>"><?php echo $course_row[$i]["course_id"]; ?></option>
@@ -110,19 +110,19 @@ session_start();
 					    <div class="form-group row">
 							<label class="col-3 col-form-label">Password</label> 
 							<div class="col-8">
-								<input placeholder="Password" class="form-control here" type="text" name="password">
+								<input placeholder="Password" class="form-control here" type="text" name="password" required=required>
 							</div>
 					    </div>
 						<div class="form-group row">
 							<label class="col-3 col-form-label">Confirm Password</label> 
 							<div class="col-8">
-								<input placeholder="Confirm Password" class="form-control here" type="text" name="password2">
+								<input placeholder="Confirm Password" class="form-control here" type="text" name="password2" required=required>
 							</div>
 					    </div> 
 						<div class="form-group row">
 							<label class="col-3 col-form-label">Upload Photo</label> 
 							<div class="col-8">
-								<input type="file" class="custom-file-input" id="customFile" name="photo">
+								<input type="file" class="custom-file-input" id="customFile" name="photo" required=required>
 								<label class="custom-file-label ml-3">Choose file</label>
 							</div>
 					    </div> 
